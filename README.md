@@ -6,12 +6,12 @@
 
 ## Danh sách thành viên
 
-| STT | Họ và Tên | Lớp | MSSV |
-| :---: | :--- | :---: | :---: |
-| 1 | Trần Viết Gia Huy | CS0001 | [Mã số] |
-| 2 | Nguyễn Minh Nhựt | CS0001 | [Mã số] |
-| 3 | Dương Quang Đông | CS0001 | [Mã số] |
-| 4 | Nguyễn Minh Huy | CS0001 | [Mã số] |
+| STT | Họ và Tên | Lớp | MSSV | GitHub |
+| :---: | :--- | :---: | :---: | :--- |
+| 1 | **Trần Viết Gia Huy** | CS0001 | 31231027056 | @tommyhuy1705 |
+| 2 | **Nguyễn Minh Nhựt** | CS0001 | [Mã số] | @username_nhut |
+| 3 | **Dương Quang Đông** | CS0001 | [Mã số] | @username_dong |
+| 4 | **Nguyễn Minh Huy** | CS0001 | [Mã số] | @username_huy |
 
 ---
 
@@ -25,6 +25,7 @@ Dự án sử dụng bộ dữ liệu **BBBC005 (Synthetic cells)** từ Broad B
 
 Đây là tập dữ liệu chuyên dụng để kiểm thử các thuật toán đánh giá độ nét (focus metrics) và phân đoạn hình ảnh y sinh thông qua các hình ảnh tế bào được mô phỏng.
 
+* **Nguồn:** [Broad Institute - BBBC005](https://bbbc.broadinstitute.org/BBBC005)
 * **Đặc tính hình ảnh:** Toàn bộ là ảnh chụp sàng lọc thông lượng cao (HCS) mô phỏng bằng nền tảng SIMCEP. Các ảnh có xác suất tụ cụm tế bào là 25%. Hiệu ứng mất nét (Focus blur) được mô phỏng qua bộ lọc Gaussian.
 * **Định dạng & Số lượng:** Gồm 19,200 ảnh định dạng `8-bit TIF` với kích thước `696 x 520` pixels. Diện tích tế bào/nhân được mô phỏng khớp với tế bào thực Human U2OS.
 * **Cấu trúc đặt tên:** Các file được đặt tên theo định dạng khay 384 giếng: `SIMCEPImages_[well]_C[cells]_F[blur]_s[samples]_w[stain].TIF`.
