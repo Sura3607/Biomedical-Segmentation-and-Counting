@@ -32,20 +32,19 @@ biomedical-segmentation-and-counting/
 |   |-- 03_ml_segmentation.ipynb
 |   `-- 04_evaluation_metrics.ipynb
 |
-|-- src/                        # Mã nguồn cốt lõi dùng chung
+|-- src/
 |   |-- __init__.py
 |   |-- data_loader.py
 |   |-- preprocess.py
-|   |-- traditional_cv.py
-|   |-- ml_models.py
-|   `-- evaluation.py
+|   |-- models.py
+|   |-- algorithm.py
+|   `-- evaluation.py -- tính toán metrics
 |
-|-- app/                        # Ứng dụng Web Streamlit
+|-- app/
 |   |-- main.py
 |   |-- components.py
 |   `-- assets/
 |
-|-- models/                     # Lưu trữ model đã huấn luyện
 |-- README.md
 |-- requirements.txt
 `-- .gitignore
