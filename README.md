@@ -13,7 +13,7 @@ Mục tiêu chính là so sánh hai hướng tiếp cận:
 | :--: | :-------- | :--: | :--: | :------------- |
 | 1 | Trần Viết Gia Huy | CS0001 | 31231027056 | @tommyhuy1705 |
 | 2 | Nguyễn Minh Nhựt | CS0001 | [MSSV] | @github_nhut |
-| 3 | Dương Quang Đông | CS0001 | [MSSV] | @github_dong |
+| 3 | Dương Quang Đông | CS0001 | 31231020389 | @DDDm3 |
 | 4 | Nguyễn Minh Huy | CS0001 | [MSSV] | @github_huy |
 
 ## Cấu trúc thư mục chuẩn đề xuất
@@ -32,20 +32,19 @@ biomedical-segmentation-and-counting/
 |   |-- 03_ml_segmentation.ipynb
 |   `-- 04_evaluation_metrics.ipynb
 |
-|-- src/                        # Mã nguồn cốt lõi dùng chung
+|-- src/
 |   |-- __init__.py
 |   |-- data_loader.py
 |   |-- preprocess.py
-|   |-- traditional_cv.py
-|   |-- ml_models.py
-|   `-- evaluation.py
+|   |-- models.py
+|   |-- algorithm.py
+|   `-- evaluation.py -- tính toán metrics
 |
-|-- app/                        # Ứng dụng Web Streamlit
+|-- app/
 |   |-- main.py
 |   |-- components.py
 |   `-- assets/
 |
-|-- models/                     # Lưu trữ model đã huấn luyện
 |-- README.md
 |-- requirements.txt
 `-- .gitignore
