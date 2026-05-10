@@ -1,0 +1,3278 @@
+[
+    {
+        "filename": "BloodImage_00001.jpeg",
+        "rbc_count": 18,
+        "wbc_count": 1,
+        "total_cells": 19,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00003.jpeg",
+        "rbc_count": 15,
+        "wbc_count": 1,
+        "total_cells": 16,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00004.jpeg",
+        "rbc_count": 11,
+        "wbc_count": 1,
+        "total_cells": 12,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00005.jpeg",
+        "rbc_count": 18,
+        "wbc_count": 1,
+        "total_cells": 19,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00006.jpeg",
+        "rbc_count": 14,
+        "wbc_count": 1,
+        "total_cells": 15,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00008.jpeg",
+        "rbc_count": 19,
+        "wbc_count": 1,
+        "total_cells": 20,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00009.jpeg",
+        "rbc_count": 16,
+        "wbc_count": 1,
+        "total_cells": 17,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00010.jpeg",
+        "rbc_count": 16,
+        "wbc_count": 2,
+        "total_cells": 18,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00012.jpeg",
+        "rbc_count": 16,
+        "wbc_count": 1,
+        "total_cells": 17,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00013.jpeg",
+        "rbc_count": 14,
+        "wbc_count": 1,
+        "total_cells": 15,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00020.jpeg",
+        "rbc_count": 19,
+        "wbc_count": 1,
+        "total_cells": 20,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00022.jpeg",
+        "rbc_count": 12,
+        "wbc_count": 1,
+        "total_cells": 13,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00023.jpeg",
+        "rbc_count": 16,
+        "wbc_count": 1,
+        "total_cells": 17,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00024.jpeg",
+        "rbc_count": 15,
+        "wbc_count": 1,
+        "total_cells": 16,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00026.jpeg",
+        "rbc_count": 16,
+        "wbc_count": 1,
+        "total_cells": 17,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00032.jpeg",
+        "rbc_count": 23,
+        "wbc_count": 1,
+        "total_cells": 24,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00034.jpeg",
+        "rbc_count": 15,
+        "wbc_count": 2,
+        "total_cells": 17,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00036.jpeg",
+        "rbc_count": 18,
+        "wbc_count": 1,
+        "total_cells": 19,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00038.jpeg",
+        "rbc_count": 25,
+        "wbc_count": 1,
+        "total_cells": 26,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00039.jpeg",
+        "rbc_count": 16,
+        "wbc_count": 1,
+        "total_cells": 17,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00040.jpeg",
+        "rbc_count": 14,
+        "wbc_count": 1,
+        "total_cells": 15,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00042.jpeg",
+        "rbc_count": 13,
+        "wbc_count": 1,
+        "total_cells": 14,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00043.jpeg",
+        "rbc_count": 12,
+        "wbc_count": 2,
+        "total_cells": 14,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00044.jpeg",
+        "rbc_count": 13,
+        "wbc_count": 2,
+        "total_cells": 15,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00045.jpeg",
+        "rbc_count": 23,
+        "wbc_count": 1,
+        "total_cells": 24,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00046.jpeg",
+        "rbc_count": 22,
+        "wbc_count": 1,
+        "total_cells": 23,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00047.jpeg",
+        "rbc_count": 17,
+        "wbc_count": 1,
+        "total_cells": 18,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00048.jpeg",
+        "rbc_count": 15,
+        "wbc_count": 1,
+        "total_cells": 16,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00049.jpeg",
+        "rbc_count": 17,
+        "wbc_count": 1,
+        "total_cells": 18,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00050.jpeg",
+        "rbc_count": 10,
+        "wbc_count": 1,
+        "total_cells": 11,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00052.jpeg",
+        "rbc_count": 15,
+        "wbc_count": 1,
+        "total_cells": 16,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00054.jpeg",
+        "rbc_count": 13,
+        "wbc_count": 1,
+        "total_cells": 14,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00056.jpeg",
+        "rbc_count": 11,
+        "wbc_count": 1,
+        "total_cells": 12,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00059.jpeg",
+        "rbc_count": 12,
+        "wbc_count": 1,
+        "total_cells": 13,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00069.jpeg",
+        "rbc_count": 12,
+        "wbc_count": 1,
+        "total_cells": 13,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00070.jpeg",
+        "rbc_count": 10,
+        "wbc_count": 2,
+        "total_cells": 12,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00071.jpeg",
+        "rbc_count": 8,
+        "wbc_count": 1,
+        "total_cells": 9,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00076.jpeg",
+        "rbc_count": 11,
+        "wbc_count": 1,
+        "total_cells": 12,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00078.jpeg",
+        "rbc_count": 11,
+        "wbc_count": 1,
+        "total_cells": 12,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00079.jpeg",
+        "rbc_count": 15,
+        "wbc_count": 1,
+        "total_cells": 16,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00081.jpeg",
+        "rbc_count": 14,
+        "wbc_count": 1,
+        "total_cells": 15,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00082.jpeg",
+        "rbc_count": 10,
+        "wbc_count": 1,
+        "total_cells": 11,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00083.jpeg",
+        "rbc_count": 13,
+        "wbc_count": 1,
+        "total_cells": 14,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00086.jpeg",
+        "rbc_count": 10,
+        "wbc_count": 1,
+        "total_cells": 11,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00087.jpeg",
+        "rbc_count": 7,
+        "wbc_count": 1,
+        "total_cells": 8,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00090.jpeg",
+        "rbc_count": 12,
+        "wbc_count": 1,
+        "total_cells": 13,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00091.jpeg",
+        "rbc_count": 9,
+        "wbc_count": 1,
+        "total_cells": 10,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00092.jpeg",
+        "rbc_count": 12,
+        "wbc_count": 1,
+        "total_cells": 13,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00094.jpeg",
+        "rbc_count": 17,
+        "wbc_count": 1,
+        "total_cells": 18,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00095.jpeg",
+        "rbc_count": 15,
+        "wbc_count": 1,
+        "total_cells": 16,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00097.jpeg",
+        "rbc_count": 16,
+        "wbc_count": 1,
+        "total_cells": 17,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00100.jpeg",
+        "rbc_count": 15,
+        "wbc_count": 1,
+        "total_cells": 16,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00101.jpeg",
+        "rbc_count": 13,
+        "wbc_count": 1,
+        "total_cells": 14,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00106.jpeg",
+        "rbc_count": 15,
+        "wbc_count": 1,
+        "total_cells": 16,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00107.jpeg",
+        "rbc_count": 12,
+        "wbc_count": 1,
+        "total_cells": 13,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00108.jpeg",
+        "rbc_count": 14,
+        "wbc_count": 1,
+        "total_cells": 15,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00110.jpeg",
+        "rbc_count": 10,
+        "wbc_count": 1,
+        "total_cells": 11,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00112.jpeg",
+        "rbc_count": 13,
+        "wbc_count": 1,
+        "total_cells": 14,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00113.jpeg",
+        "rbc_count": 11,
+        "wbc_count": 2,
+        "total_cells": 13,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00114.jpeg",
+        "rbc_count": 14,
+        "wbc_count": 1,
+        "total_cells": 15,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00117.jpeg",
+        "rbc_count": 10,
+        "wbc_count": 1,
+        "total_cells": 11,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00120.jpeg",
+        "rbc_count": 9,
+        "wbc_count": 1,
+        "total_cells": 10,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00123.jpeg",
+        "rbc_count": 8,
+        "wbc_count": 1,
+        "total_cells": 9,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00124.jpeg",
+        "rbc_count": 10,
+        "wbc_count": 1,
+        "total_cells": 11,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00126.jpeg",
+        "rbc_count": 11,
+        "wbc_count": 1,
+        "total_cells": 12,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00127.jpeg",
+        "rbc_count": 5,
+        "wbc_count": 1,
+        "total_cells": 6,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00133.jpeg",
+        "rbc_count": 9,
+        "wbc_count": 0,
+        "total_cells": 9,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00134.jpeg",
+        "rbc_count": 0,
+        "wbc_count": 1,
+        "total_cells": 1,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00139.jpeg",
+        "rbc_count": 9,
+        "wbc_count": 1,
+        "total_cells": 10,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00141.jpeg",
+        "rbc_count": 9,
+        "wbc_count": 1,
+        "total_cells": 10,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00142.jpeg",
+        "rbc_count": 6,
+        "wbc_count": 1,
+        "total_cells": 7,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00144.jpeg",
+        "rbc_count": 9,
+        "wbc_count": 1,
+        "total_cells": 10,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00150.jpeg",
+        "rbc_count": 0,
+        "wbc_count": 1,
+        "total_cells": 1,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00154.jpeg",
+        "rbc_count": 6,
+        "wbc_count": 1,
+        "total_cells": 7,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00156.jpeg",
+        "rbc_count": 9,
+        "wbc_count": 1,
+        "total_cells": 10,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00158.jpeg",
+        "rbc_count": 5,
+        "wbc_count": 1,
+        "total_cells": 6,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00159.jpeg",
+        "rbc_count": 5,
+        "wbc_count": 1,
+        "total_cells": 6,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00160.jpeg",
+        "rbc_count": 9,
+        "wbc_count": 1,
+        "total_cells": 10,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00163.jpeg",
+        "rbc_count": 6,
+        "wbc_count": 1,
+        "total_cells": 7,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00164.jpeg",
+        "rbc_count": 10,
+        "wbc_count": 1,
+        "total_cells": 11,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00165.jpeg",
+        "rbc_count": 10,
+        "wbc_count": 1,
+        "total_cells": 11,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00166.jpeg",
+        "rbc_count": 11,
+        "wbc_count": 1,
+        "total_cells": 12,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00168.jpeg",
+        "rbc_count": 16,
+        "wbc_count": 1,
+        "total_cells": 17,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00170.jpeg",
+        "rbc_count": 13,
+        "wbc_count": 1,
+        "total_cells": 14,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00174.jpeg",
+        "rbc_count": 13,
+        "wbc_count": 1,
+        "total_cells": 14,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00175.jpeg",
+        "rbc_count": 9,
+        "wbc_count": 1,
+        "total_cells": 10,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00176.jpeg",
+        "rbc_count": 11,
+        "wbc_count": 2,
+        "total_cells": 13,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00177.jpeg",
+        "rbc_count": 11,
+        "wbc_count": 1,
+        "total_cells": 12,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00179.jpeg",
+        "rbc_count": 12,
+        "wbc_count": 1,
+        "total_cells": 13,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00182.jpeg",
+        "rbc_count": 9,
+        "wbc_count": 1,
+        "total_cells": 10,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00187.jpeg",
+        "rbc_count": 6,
+        "wbc_count": 1,
+        "total_cells": 7,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00189.jpeg",
+        "rbc_count": 13,
+        "wbc_count": 1,
+        "total_cells": 14,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00190.jpeg",
+        "rbc_count": 12,
+        "wbc_count": 1,
+        "total_cells": 13,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00191.jpeg",
+        "rbc_count": 14,
+        "wbc_count": 1,
+        "total_cells": 15,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00195.jpeg",
+        "rbc_count": 10,
+        "wbc_count": 2,
+        "total_cells": 12,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00196.jpeg",
+        "rbc_count": 10,
+        "wbc_count": 1,
+        "total_cells": 11,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00197.jpeg",
+        "rbc_count": 11,
+        "wbc_count": 1,
+        "total_cells": 12,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00198.jpeg",
+        "rbc_count": 14,
+        "wbc_count": 1,
+        "total_cells": 15,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00199.jpeg",
+        "rbc_count": 10,
+        "wbc_count": 1,
+        "total_cells": 11,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00200.jpeg",
+        "rbc_count": 9,
+        "wbc_count": 1,
+        "total_cells": 10,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00201.jpeg",
+        "rbc_count": 9,
+        "wbc_count": 1,
+        "total_cells": 10,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00202.jpeg",
+        "rbc_count": 12,
+        "wbc_count": 1,
+        "total_cells": 13,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00203.jpeg",
+        "rbc_count": 9,
+        "wbc_count": 1,
+        "total_cells": 10,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00204.jpeg",
+        "rbc_count": 14,
+        "wbc_count": 1,
+        "total_cells": 15,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00206.jpeg",
+        "rbc_count": 14,
+        "wbc_count": 1,
+        "total_cells": 15,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00210.jpeg",
+        "rbc_count": 12,
+        "wbc_count": 1,
+        "total_cells": 13,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00211.jpeg",
+        "rbc_count": 12,
+        "wbc_count": 1,
+        "total_cells": 13,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00212.jpeg",
+        "rbc_count": 13,
+        "wbc_count": 1,
+        "total_cells": 14,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00214.jpeg",
+        "rbc_count": 15,
+        "wbc_count": 1,
+        "total_cells": 16,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00215.jpeg",
+        "rbc_count": 13,
+        "wbc_count": 1,
+        "total_cells": 14,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00224.jpeg",
+        "rbc_count": 0,
+        "wbc_count": 1,
+        "total_cells": 1,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00231.jpeg",
+        "rbc_count": 8,
+        "wbc_count": 1,
+        "total_cells": 9,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00232.jpeg",
+        "rbc_count": 9,
+        "wbc_count": 1,
+        "total_cells": 10,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00235.jpeg",
+        "rbc_count": 3,
+        "wbc_count": 1,
+        "total_cells": 4,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00237.jpeg",
+        "rbc_count": 11,
+        "wbc_count": 1,
+        "total_cells": 12,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00239.jpeg",
+        "rbc_count": 11,
+        "wbc_count": 1,
+        "total_cells": 12,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00240.jpeg",
+        "rbc_count": 8,
+        "wbc_count": 1,
+        "total_cells": 9,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00242.jpeg",
+        "rbc_count": 14,
+        "wbc_count": 1,
+        "total_cells": 15,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00243.jpeg",
+        "rbc_count": 11,
+        "wbc_count": 1,
+        "total_cells": 12,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00247.jpeg",
+        "rbc_count": 13,
+        "wbc_count": 1,
+        "total_cells": 14,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00248.jpeg",
+        "rbc_count": 11,
+        "wbc_count": 1,
+        "total_cells": 12,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00250.jpeg",
+        "rbc_count": 0,
+        "wbc_count": 1,
+        "total_cells": 1,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00251.jpeg",
+        "rbc_count": 8,
+        "wbc_count": 1,
+        "total_cells": 9,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00252.jpeg",
+        "rbc_count": 9,
+        "wbc_count": 1,
+        "total_cells": 10,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00254.jpeg",
+        "rbc_count": 9,
+        "wbc_count": 1,
+        "total_cells": 10,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00256.jpeg",
+        "rbc_count": 5,
+        "wbc_count": 1,
+        "total_cells": 6,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00257.jpeg",
+        "rbc_count": 7,
+        "wbc_count": 1,
+        "total_cells": 8,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00258.jpeg",
+        "rbc_count": 0,
+        "wbc_count": 1,
+        "total_cells": 1,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00259.jpeg",
+        "rbc_count": 7,
+        "wbc_count": 1,
+        "total_cells": 8,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00263.jpeg",
+        "rbc_count": 12,
+        "wbc_count": 1,
+        "total_cells": 13,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00264.jpeg",
+        "rbc_count": 13,
+        "wbc_count": 1,
+        "total_cells": 14,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00265.jpeg",
+        "rbc_count": 10,
+        "wbc_count": 1,
+        "total_cells": 11,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00266.jpeg",
+        "rbc_count": 12,
+        "wbc_count": 1,
+        "total_cells": 13,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00267.jpeg",
+        "rbc_count": 0,
+        "wbc_count": 1,
+        "total_cells": 1,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00268.jpeg",
+        "rbc_count": 0,
+        "wbc_count": 1,
+        "total_cells": 1,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00270.jpeg",
+        "rbc_count": 3,
+        "wbc_count": 1,
+        "total_cells": 4,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00273.jpeg",
+        "rbc_count": 12,
+        "wbc_count": 1,
+        "total_cells": 13,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00275.jpeg",
+        "rbc_count": 14,
+        "wbc_count": 1,
+        "total_cells": 15,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00276.jpeg",
+        "rbc_count": 12,
+        "wbc_count": 1,
+        "total_cells": 13,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00278.jpeg",
+        "rbc_count": 12,
+        "wbc_count": 1,
+        "total_cells": 13,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00279.jpeg",
+        "rbc_count": 13,
+        "wbc_count": 1,
+        "total_cells": 14,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00281.jpeg",
+        "rbc_count": 10,
+        "wbc_count": 1,
+        "total_cells": 11,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00283.jpeg",
+        "rbc_count": 12,
+        "wbc_count": 1,
+        "total_cells": 13,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00288.jpeg",
+        "rbc_count": 18,
+        "wbc_count": 1,
+        "total_cells": 19,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00289.jpeg",
+        "rbc_count": 10,
+        "wbc_count": 1,
+        "total_cells": 11,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00291.jpeg",
+        "rbc_count": 9,
+        "wbc_count": 1,
+        "total_cells": 10,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00292.jpeg",
+        "rbc_count": 13,
+        "wbc_count": 1,
+        "total_cells": 14,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00294.jpeg",
+        "rbc_count": 10,
+        "wbc_count": 1,
+        "total_cells": 11,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00295.jpeg",
+        "rbc_count": 11,
+        "wbc_count": 1,
+        "total_cells": 12,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00297.jpeg",
+        "rbc_count": 9,
+        "wbc_count": 1,
+        "total_cells": 10,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00299.jpeg",
+        "rbc_count": 8,
+        "wbc_count": 1,
+        "total_cells": 9,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00300.jpeg",
+        "rbc_count": 13,
+        "wbc_count": 1,
+        "total_cells": 14,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00301.jpeg",
+        "rbc_count": 13,
+        "wbc_count": 1,
+        "total_cells": 14,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00302.jpeg",
+        "rbc_count": 12,
+        "wbc_count": 1,
+        "total_cells": 13,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00305.jpeg",
+        "rbc_count": 13,
+        "wbc_count": 1,
+        "total_cells": 14,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00307.jpeg",
+        "rbc_count": 12,
+        "wbc_count": 1,
+        "total_cells": 13,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00308.jpeg",
+        "rbc_count": 11,
+        "wbc_count": 1,
+        "total_cells": 12,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00309.jpeg",
+        "rbc_count": 12,
+        "wbc_count": 1,
+        "total_cells": 13,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00311.jpeg",
+        "rbc_count": 8,
+        "wbc_count": 1,
+        "total_cells": 9,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00313.jpeg",
+        "rbc_count": 10,
+        "wbc_count": 2,
+        "total_cells": 12,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00314.jpeg",
+        "rbc_count": 10,
+        "wbc_count": 1,
+        "total_cells": 11,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00317.jpeg",
+        "rbc_count": 13,
+        "wbc_count": 1,
+        "total_cells": 14,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00318.jpeg",
+        "rbc_count": 11,
+        "wbc_count": 1,
+        "total_cells": 12,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00322.jpeg",
+        "rbc_count": 0,
+        "wbc_count": 1,
+        "total_cells": 1,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00324.jpeg",
+        "rbc_count": 11,
+        "wbc_count": 1,
+        "total_cells": 12,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00325.jpeg",
+        "rbc_count": 11,
+        "wbc_count": 1,
+        "total_cells": 12,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00332.jpeg",
+        "rbc_count": 9,
+        "wbc_count": 1,
+        "total_cells": 10,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00335.jpeg",
+        "rbc_count": 11,
+        "wbc_count": 1,
+        "total_cells": 12,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00336.jpeg",
+        "rbc_count": 10,
+        "wbc_count": 1,
+        "total_cells": 11,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00339.jpeg",
+        "rbc_count": 15,
+        "wbc_count": 1,
+        "total_cells": 16,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00343.jpeg",
+        "rbc_count": 9,
+        "wbc_count": 1,
+        "total_cells": 10,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00344.jpeg",
+        "rbc_count": 12,
+        "wbc_count": 1,
+        "total_cells": 13,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00345.jpeg",
+        "rbc_count": 12,
+        "wbc_count": 1,
+        "total_cells": 13,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00347.jpeg",
+        "rbc_count": 18,
+        "wbc_count": 1,
+        "total_cells": 19,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00348.jpeg",
+        "rbc_count": 14,
+        "wbc_count": 1,
+        "total_cells": 15,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00351.jpeg",
+        "rbc_count": 14,
+        "wbc_count": 1,
+        "total_cells": 15,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00353.jpeg",
+        "rbc_count": 13,
+        "wbc_count": 1,
+        "total_cells": 14,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00354.jpeg",
+        "rbc_count": 15,
+        "wbc_count": 1,
+        "total_cells": 16,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00355.jpeg",
+        "rbc_count": 14,
+        "wbc_count": 1,
+        "total_cells": 15,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00356.jpeg",
+        "rbc_count": 16,
+        "wbc_count": 1,
+        "total_cells": 17,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00357.jpeg",
+        "rbc_count": 13,
+        "wbc_count": 1,
+        "total_cells": 14,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00359.jpeg",
+        "rbc_count": 14,
+        "wbc_count": 1,
+        "total_cells": 15,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00361.jpeg",
+        "rbc_count": 14,
+        "wbc_count": 1,
+        "total_cells": 15,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00362.jpeg",
+        "rbc_count": 11,
+        "wbc_count": 1,
+        "total_cells": 12,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00364.jpeg",
+        "rbc_count": 14,
+        "wbc_count": 1,
+        "total_cells": 15,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00369.jpeg",
+        "rbc_count": 17,
+        "wbc_count": 1,
+        "total_cells": 18,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00370.jpeg",
+        "rbc_count": 14,
+        "wbc_count": 1,
+        "total_cells": 15,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00371.jpeg",
+        "rbc_count": 12,
+        "wbc_count": 1,
+        "total_cells": 13,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00372.jpeg",
+        "rbc_count": 12,
+        "wbc_count": 1,
+        "total_cells": 13,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00374.jpeg",
+        "rbc_count": 9,
+        "wbc_count": 2,
+        "total_cells": 11,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00376.jpeg",
+        "rbc_count": 10,
+        "wbc_count": 1,
+        "total_cells": 11,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00377.jpeg",
+        "rbc_count": 13,
+        "wbc_count": 1,
+        "total_cells": 14,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00378.jpeg",
+        "rbc_count": 15,
+        "wbc_count": 1,
+        "total_cells": 16,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00379.jpeg",
+        "rbc_count": 18,
+        "wbc_count": 1,
+        "total_cells": 19,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00382.jpeg",
+        "rbc_count": 13,
+        "wbc_count": 1,
+        "total_cells": 14,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00384.jpeg",
+        "rbc_count": 10,
+        "wbc_count": 1,
+        "total_cells": 11,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00387.jpeg",
+        "rbc_count": 10,
+        "wbc_count": 1,
+        "total_cells": 11,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00388.jpeg",
+        "rbc_count": 10,
+        "wbc_count": 1,
+        "total_cells": 11,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00393.jpeg",
+        "rbc_count": 11,
+        "wbc_count": 1,
+        "total_cells": 12,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00395.jpeg",
+        "rbc_count": 14,
+        "wbc_count": 1,
+        "total_cells": 15,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00400.jpeg",
+        "rbc_count": 12,
+        "wbc_count": 1,
+        "total_cells": 13,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00403.jpeg",
+        "rbc_count": 15,
+        "wbc_count": 1,
+        "total_cells": 16,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00404.jpeg",
+        "rbc_count": 13,
+        "wbc_count": 1,
+        "total_cells": 14,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00405.jpeg",
+        "rbc_count": 14,
+        "wbc_count": 1,
+        "total_cells": 15,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00408.jpeg",
+        "rbc_count": 15,
+        "wbc_count": 1,
+        "total_cells": 16,
+        "width": 640,
+        "height": 480,
+        "split": "train"
+    },
+    {
+        "filename": "BloodImage_00000.jpeg",
+        "rbc_count": 19,
+        "wbc_count": 1,
+        "total_cells": 20,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00002.jpeg",
+        "rbc_count": 15,
+        "wbc_count": 1,
+        "total_cells": 16,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00014.jpeg",
+        "rbc_count": 16,
+        "wbc_count": 1,
+        "total_cells": 17,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00017.jpeg",
+        "rbc_count": 16,
+        "wbc_count": 1,
+        "total_cells": 17,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00028.jpeg",
+        "rbc_count": 21,
+        "wbc_count": 1,
+        "total_cells": 22,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00029.jpeg",
+        "rbc_count": 22,
+        "wbc_count": 1,
+        "total_cells": 23,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00030.jpeg",
+        "rbc_count": 21,
+        "wbc_count": 1,
+        "total_cells": 22,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00035.jpeg",
+        "rbc_count": 19,
+        "wbc_count": 1,
+        "total_cells": 20,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00037.jpeg",
+        "rbc_count": 27,
+        "wbc_count": 1,
+        "total_cells": 28,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00053.jpeg",
+        "rbc_count": 11,
+        "wbc_count": 1,
+        "total_cells": 12,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00055.jpeg",
+        "rbc_count": 10,
+        "wbc_count": 1,
+        "total_cells": 11,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00064.jpeg",
+        "rbc_count": 10,
+        "wbc_count": 1,
+        "total_cells": 11,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00066.jpeg",
+        "rbc_count": 8,
+        "wbc_count": 1,
+        "total_cells": 9,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00072.jpeg",
+        "rbc_count": 3,
+        "wbc_count": 1,
+        "total_cells": 4,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00073.jpeg",
+        "rbc_count": 11,
+        "wbc_count": 1,
+        "total_cells": 12,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00089.jpeg",
+        "rbc_count": 10,
+        "wbc_count": 1,
+        "total_cells": 11,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00099.jpeg",
+        "rbc_count": 15,
+        "wbc_count": 1,
+        "total_cells": 16,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00104.jpeg",
+        "rbc_count": 14,
+        "wbc_count": 1,
+        "total_cells": 15,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00109.jpeg",
+        "rbc_count": 11,
+        "wbc_count": 1,
+        "total_cells": 12,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00111.jpeg",
+        "rbc_count": 15,
+        "wbc_count": 1,
+        "total_cells": 16,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00115.jpeg",
+        "rbc_count": 14,
+        "wbc_count": 1,
+        "total_cells": 15,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00125.jpeg",
+        "rbc_count": 10,
+        "wbc_count": 1,
+        "total_cells": 11,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00130.jpeg",
+        "rbc_count": 8,
+        "wbc_count": 1,
+        "total_cells": 9,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00140.jpeg",
+        "rbc_count": 8,
+        "wbc_count": 1,
+        "total_cells": 9,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00143.jpeg",
+        "rbc_count": 5,
+        "wbc_count": 1,
+        "total_cells": 6,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00145.jpeg",
+        "rbc_count": 10,
+        "wbc_count": 1,
+        "total_cells": 11,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00147.jpeg",
+        "rbc_count": 0,
+        "wbc_count": 1,
+        "total_cells": 1,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00148.jpeg",
+        "rbc_count": 4,
+        "wbc_count": 1,
+        "total_cells": 5,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00152.jpeg",
+        "rbc_count": 0,
+        "wbc_count": 1,
+        "total_cells": 1,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00162.jpeg",
+        "rbc_count": 11,
+        "wbc_count": 1,
+        "total_cells": 12,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00183.jpeg",
+        "rbc_count": 7,
+        "wbc_count": 1,
+        "total_cells": 8,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00192.jpeg",
+        "rbc_count": 11,
+        "wbc_count": 1,
+        "total_cells": 12,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00193.jpeg",
+        "rbc_count": 7,
+        "wbc_count": 2,
+        "total_cells": 9,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00207.jpeg",
+        "rbc_count": 11,
+        "wbc_count": 1,
+        "total_cells": 12,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00209.jpeg",
+        "rbc_count": 11,
+        "wbc_count": 1,
+        "total_cells": 12,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00216.jpeg",
+        "rbc_count": 15,
+        "wbc_count": 1,
+        "total_cells": 16,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00217.jpeg",
+        "rbc_count": 12,
+        "wbc_count": 1,
+        "total_cells": 13,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00218.jpeg",
+        "rbc_count": 10,
+        "wbc_count": 1,
+        "total_cells": 11,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00219.jpeg",
+        "rbc_count": 8,
+        "wbc_count": 1,
+        "total_cells": 9,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00221.jpeg",
+        "rbc_count": 10,
+        "wbc_count": 1,
+        "total_cells": 11,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00222.jpeg",
+        "rbc_count": 9,
+        "wbc_count": 1,
+        "total_cells": 10,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00223.jpeg",
+        "rbc_count": 12,
+        "wbc_count": 1,
+        "total_cells": 13,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00228.jpeg",
+        "rbc_count": 11,
+        "wbc_count": 0,
+        "total_cells": 11,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00230.jpeg",
+        "rbc_count": 10,
+        "wbc_count": 1,
+        "total_cells": 11,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00236.jpeg",
+        "rbc_count": 6,
+        "wbc_count": 1,
+        "total_cells": 7,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00241.jpeg",
+        "rbc_count": 6,
+        "wbc_count": 1,
+        "total_cells": 7,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00244.jpeg",
+        "rbc_count": 14,
+        "wbc_count": 1,
+        "total_cells": 15,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00245.jpeg",
+        "rbc_count": 15,
+        "wbc_count": 1,
+        "total_cells": 16,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00246.jpeg",
+        "rbc_count": 12,
+        "wbc_count": 1,
+        "total_cells": 13,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00255.jpeg",
+        "rbc_count": 11,
+        "wbc_count": 1,
+        "total_cells": 12,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00260.jpeg",
+        "rbc_count": 5,
+        "wbc_count": 1,
+        "total_cells": 6,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00261.jpeg",
+        "rbc_count": 8,
+        "wbc_count": 1,
+        "total_cells": 9,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00262.jpeg",
+        "rbc_count": 9,
+        "wbc_count": 1,
+        "total_cells": 10,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00269.jpeg",
+        "rbc_count": 8,
+        "wbc_count": 1,
+        "total_cells": 9,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00272.jpeg",
+        "rbc_count": 13,
+        "wbc_count": 1,
+        "total_cells": 14,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00274.jpeg",
+        "rbc_count": 6,
+        "wbc_count": 1,
+        "total_cells": 7,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00277.jpeg",
+        "rbc_count": 13,
+        "wbc_count": 1,
+        "total_cells": 14,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00285.jpeg",
+        "rbc_count": 11,
+        "wbc_count": 1,
+        "total_cells": 12,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00298.jpeg",
+        "rbc_count": 9,
+        "wbc_count": 1,
+        "total_cells": 10,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00304.jpeg",
+        "rbc_count": 11,
+        "wbc_count": 1,
+        "total_cells": 12,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00310.jpeg",
+        "rbc_count": 11,
+        "wbc_count": 1,
+        "total_cells": 12,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00312.jpeg",
+        "rbc_count": 7,
+        "wbc_count": 1,
+        "total_cells": 8,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00315.jpeg",
+        "rbc_count": 10,
+        "wbc_count": 1,
+        "total_cells": 11,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00326.jpeg",
+        "rbc_count": 10,
+        "wbc_count": 1,
+        "total_cells": 11,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00330.jpeg",
+        "rbc_count": 0,
+        "wbc_count": 1,
+        "total_cells": 1,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00331.jpeg",
+        "rbc_count": 14,
+        "wbc_count": 1,
+        "total_cells": 15,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00334.jpeg",
+        "rbc_count": 10,
+        "wbc_count": 1,
+        "total_cells": 11,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00337.jpeg",
+        "rbc_count": 13,
+        "wbc_count": 1,
+        "total_cells": 14,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00338.jpeg",
+        "rbc_count": 13,
+        "wbc_count": 1,
+        "total_cells": 14,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00340.jpeg",
+        "rbc_count": 11,
+        "wbc_count": 1,
+        "total_cells": 12,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00342.jpeg",
+        "rbc_count": 8,
+        "wbc_count": 1,
+        "total_cells": 9,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00349.jpeg",
+        "rbc_count": 13,
+        "wbc_count": 1,
+        "total_cells": 14,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00350.jpeg",
+        "rbc_count": 0,
+        "wbc_count": 1,
+        "total_cells": 1,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00352.jpeg",
+        "rbc_count": 12,
+        "wbc_count": 1,
+        "total_cells": 13,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00367.jpeg",
+        "rbc_count": 14,
+        "wbc_count": 1,
+        "total_cells": 15,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00368.jpeg",
+        "rbc_count": 13,
+        "wbc_count": 1,
+        "total_cells": 14,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00381.jpeg",
+        "rbc_count": 15,
+        "wbc_count": 1,
+        "total_cells": 16,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00383.jpeg",
+        "rbc_count": 8,
+        "wbc_count": 1,
+        "total_cells": 9,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00386.jpeg",
+        "rbc_count": 14,
+        "wbc_count": 1,
+        "total_cells": 15,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00389.jpeg",
+        "rbc_count": 5,
+        "wbc_count": 1,
+        "total_cells": 6,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00392.jpeg",
+        "rbc_count": 14,
+        "wbc_count": 1,
+        "total_cells": 15,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00396.jpeg",
+        "rbc_count": 17,
+        "wbc_count": 1,
+        "total_cells": 18,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00397.jpeg",
+        "rbc_count": 17,
+        "wbc_count": 1,
+        "total_cells": 18,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00398.jpeg",
+        "rbc_count": 14,
+        "wbc_count": 1,
+        "total_cells": 15,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00402.jpeg",
+        "rbc_count": 13,
+        "wbc_count": 1,
+        "total_cells": 14,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00409.jpeg",
+        "rbc_count": 14,
+        "wbc_count": 1,
+        "total_cells": 15,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00410.jpeg",
+        "rbc_count": 13,
+        "wbc_count": 1,
+        "total_cells": 14,
+        "width": 640,
+        "height": 480,
+        "split": "val"
+    },
+    {
+        "filename": "BloodImage_00007.jpeg",
+        "rbc_count": 17,
+        "wbc_count": 1,
+        "total_cells": 18,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00011.jpeg",
+        "rbc_count": 17,
+        "wbc_count": 1,
+        "total_cells": 18,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00015.jpeg",
+        "rbc_count": 14,
+        "wbc_count": 1,
+        "total_cells": 15,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00016.jpeg",
+        "rbc_count": 11,
+        "wbc_count": 1,
+        "total_cells": 12,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00018.jpeg",
+        "rbc_count": 21,
+        "wbc_count": 1,
+        "total_cells": 22,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00019.jpeg",
+        "rbc_count": 16,
+        "wbc_count": 1,
+        "total_cells": 17,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00021.jpeg",
+        "rbc_count": 16,
+        "wbc_count": 1,
+        "total_cells": 17,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00031.jpeg",
+        "rbc_count": 18,
+        "wbc_count": 2,
+        "total_cells": 20,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00033.jpeg",
+        "rbc_count": 18,
+        "wbc_count": 1,
+        "total_cells": 19,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00041.jpeg",
+        "rbc_count": 17,
+        "wbc_count": 1,
+        "total_cells": 18,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00057.jpeg",
+        "rbc_count": 8,
+        "wbc_count": 1,
+        "total_cells": 9,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00058.jpeg",
+        "rbc_count": 8,
+        "wbc_count": 1,
+        "total_cells": 9,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00062.jpeg",
+        "rbc_count": 11,
+        "wbc_count": 1,
+        "total_cells": 12,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00063.jpeg",
+        "rbc_count": 9,
+        "wbc_count": 1,
+        "total_cells": 10,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00065.jpeg",
+        "rbc_count": 5,
+        "wbc_count": 2,
+        "total_cells": 7,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00067.jpeg",
+        "rbc_count": 11,
+        "wbc_count": 1,
+        "total_cells": 12,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00068.jpeg",
+        "rbc_count": 9,
+        "wbc_count": 1,
+        "total_cells": 10,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00074.jpeg",
+        "rbc_count": 13,
+        "wbc_count": 1,
+        "total_cells": 14,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00075.jpeg",
+        "rbc_count": 10,
+        "wbc_count": 1,
+        "total_cells": 11,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00077.jpeg",
+        "rbc_count": 8,
+        "wbc_count": 1,
+        "total_cells": 9,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00088.jpeg",
+        "rbc_count": 10,
+        "wbc_count": 1,
+        "total_cells": 11,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00093.jpeg",
+        "rbc_count": 11,
+        "wbc_count": 1,
+        "total_cells": 12,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00098.jpeg",
+        "rbc_count": 13,
+        "wbc_count": 1,
+        "total_cells": 14,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00103.jpeg",
+        "rbc_count": 16,
+        "wbc_count": 1,
+        "total_cells": 17,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00132.jpeg",
+        "rbc_count": 7,
+        "wbc_count": 1,
+        "total_cells": 8,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00135.jpeg",
+        "rbc_count": 10,
+        "wbc_count": 0,
+        "total_cells": 10,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00136.jpeg",
+        "rbc_count": 9,
+        "wbc_count": 1,
+        "total_cells": 10,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00137.jpeg",
+        "rbc_count": 5,
+        "wbc_count": 1,
+        "total_cells": 6,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00149.jpeg",
+        "rbc_count": 8,
+        "wbc_count": 1,
+        "total_cells": 9,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00157.jpeg",
+        "rbc_count": 3,
+        "wbc_count": 1,
+        "total_cells": 4,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00161.jpeg",
+        "rbc_count": 13,
+        "wbc_count": 1,
+        "total_cells": 14,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00167.jpeg",
+        "rbc_count": 14,
+        "wbc_count": 1,
+        "total_cells": 15,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00169.jpeg",
+        "rbc_count": 16,
+        "wbc_count": 1,
+        "total_cells": 17,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00171.jpeg",
+        "rbc_count": 13,
+        "wbc_count": 0,
+        "total_cells": 13,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00172.jpeg",
+        "rbc_count": 14,
+        "wbc_count": 1,
+        "total_cells": 15,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00178.jpeg",
+        "rbc_count": 12,
+        "wbc_count": 0,
+        "total_cells": 12,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00180.jpeg",
+        "rbc_count": 10,
+        "wbc_count": 1,
+        "total_cells": 11,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00184.jpeg",
+        "rbc_count": 9,
+        "wbc_count": 1,
+        "total_cells": 10,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00205.jpeg",
+        "rbc_count": 13,
+        "wbc_count": 1,
+        "total_cells": 14,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00208.jpeg",
+        "rbc_count": 13,
+        "wbc_count": 1,
+        "total_cells": 14,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00220.jpeg",
+        "rbc_count": 9,
+        "wbc_count": 1,
+        "total_cells": 10,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00225.jpeg",
+        "rbc_count": 13,
+        "wbc_count": 1,
+        "total_cells": 14,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00226.jpeg",
+        "rbc_count": 15,
+        "wbc_count": 1,
+        "total_cells": 16,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00227.jpeg",
+        "rbc_count": 11,
+        "wbc_count": 1,
+        "total_cells": 12,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00229.jpeg",
+        "rbc_count": 10,
+        "wbc_count": 1,
+        "total_cells": 11,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00233.jpeg",
+        "rbc_count": 6,
+        "wbc_count": 1,
+        "total_cells": 7,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00234.jpeg",
+        "rbc_count": 10,
+        "wbc_count": 1,
+        "total_cells": 11,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00249.jpeg",
+        "rbc_count": 0,
+        "wbc_count": 2,
+        "total_cells": 2,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00253.jpeg",
+        "rbc_count": 9,
+        "wbc_count": 1,
+        "total_cells": 10,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00271.jpeg",
+        "rbc_count": 11,
+        "wbc_count": 1,
+        "total_cells": 12,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00282.jpeg",
+        "rbc_count": 14,
+        "wbc_count": 1,
+        "total_cells": 15,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00284.jpeg",
+        "rbc_count": 10,
+        "wbc_count": 1,
+        "total_cells": 11,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00287.jpeg",
+        "rbc_count": 14,
+        "wbc_count": 1,
+        "total_cells": 15,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00290.jpeg",
+        "rbc_count": 11,
+        "wbc_count": 1,
+        "total_cells": 12,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00293.jpeg",
+        "rbc_count": 10,
+        "wbc_count": 1,
+        "total_cells": 11,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00296.jpeg",
+        "rbc_count": 12,
+        "wbc_count": 1,
+        "total_cells": 13,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00303.jpeg",
+        "rbc_count": 0,
+        "wbc_count": 1,
+        "total_cells": 1,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00319.jpeg",
+        "rbc_count": 10,
+        "wbc_count": 1,
+        "total_cells": 11,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00320.jpeg",
+        "rbc_count": 11,
+        "wbc_count": 1,
+        "total_cells": 12,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00323.jpeg",
+        "rbc_count": 5,
+        "wbc_count": 1,
+        "total_cells": 6,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00327.jpeg",
+        "rbc_count": 0,
+        "wbc_count": 0,
+        "total_cells": 0,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00333.jpeg",
+        "rbc_count": 14,
+        "wbc_count": 1,
+        "total_cells": 15,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00341.jpeg",
+        "rbc_count": 9,
+        "wbc_count": 1,
+        "total_cells": 10,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00346.jpeg",
+        "rbc_count": 13,
+        "wbc_count": 1,
+        "total_cells": 14,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00360.jpeg",
+        "rbc_count": 11,
+        "wbc_count": 1,
+        "total_cells": 12,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00365.jpeg",
+        "rbc_count": 12,
+        "wbc_count": 1,
+        "total_cells": 13,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00366.jpeg",
+        "rbc_count": 14,
+        "wbc_count": 1,
+        "total_cells": 15,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00375.jpeg",
+        "rbc_count": 12,
+        "wbc_count": 1,
+        "total_cells": 13,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00385.jpeg",
+        "rbc_count": 14,
+        "wbc_count": 1,
+        "total_cells": 15,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00390.jpeg",
+        "rbc_count": 10,
+        "wbc_count": 1,
+        "total_cells": 11,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00391.jpeg",
+        "rbc_count": 14,
+        "wbc_count": 1,
+        "total_cells": 15,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    },
+    {
+        "filename": "BloodImage_00407.jpeg",
+        "rbc_count": 15,
+        "wbc_count": 1,
+        "total_cells": 16,
+        "width": 640,
+        "height": 480,
+        "split": "test"
+    }
+]
