@@ -20,8 +20,12 @@ if exist("kmeans", "file") ~= 2
     return;
 end
 
-[featureRaw, featureNames] = buildPixelFeatures(rgb, config);
-featureRaw(~isfinite(featureRaw)) = 0;
+if hasPersistedModel(config)
+    out = predictKMeansRBC(rgb, config);
+    return;
+end
+
+[featureRaw, featureNames] = buildKMeansPixelFeatures(rgb, config);
 
 sampleIdx = selectSampleRows(size(featureRaw, 1), config);
 [featureNorm, mu, sigma] = standardizeFeatures(featureRaw, sampleIdx);
@@ -39,7 +43,7 @@ rng(config.ml.kmeans.randomSeed);
     "MaxIter", config.ml.kmeans.maxIter, ...
     "Display", "off");
 
-clusterId = assignToCentroids(featureNorm, centroids);
+clusterId = assignKMeansCentroids(featureNorm, centroids);
 clusterMap = reshape(clusterId, imgHeight, imgWidth);
 
 clusterStats = summarizeClusters(clusterId, featureRaw, featureNames, k);
@@ -68,6 +72,22 @@ out.backgroundClusters = classInfo.backgroundClusters;
 out.finalMethod = "kmeans_pixel_features";
 out.notes = "K-means pixel segmentation. RBC/WBC/background clusters are selected by color-feature scores.";
 
+end
+
+function tf = hasPersistedModel(config)
+tf = false;
+if ~isfield(config, "ml") || ~isfield(config.ml, "kmeans")
+    return;
+end
+
+if isfield(config.ml.kmeans, "model") && ~isempty(config.ml.kmeans.model)
+    tf = true;
+    return;
+end
+
+if isfield(config.ml.kmeans, "modelPath") && strlength(string(config.ml.kmeans.modelPath)) > 0
+    tf = isfile(char(config.ml.kmeans.modelPath));
+end
 end
 
 function [features, featureNames] = buildPixelFeatures(rgb, config)

@@ -1,0 +1,2186 @@
+﻿[
+    {
+        "id":  "BloodImage_00007.jpeg",
+        "groundTruth":  17,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00007.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00011.jpeg",
+        "groundTruth":  17,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00011.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00015.jpeg",
+        "groundTruth":  14,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00015.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00016.jpeg",
+        "groundTruth":  11,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00016.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00018.jpeg",
+        "groundTruth":  21,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00018.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00019.jpeg",
+        "groundTruth":  16,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00019.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00021.jpeg",
+        "groundTruth":  16,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00021.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00031.jpeg",
+        "groundTruth":  18,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00031.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00033.jpeg",
+        "groundTruth":  18,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00033.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00041.jpeg",
+        "groundTruth":  17,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00041.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00057.jpeg",
+        "groundTruth":  8,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00057.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00058.jpeg",
+        "groundTruth":  8,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00058.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00062.jpeg",
+        "groundTruth":  11,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00062.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00063.jpeg",
+        "groundTruth":  9,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00063.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00065.jpeg",
+        "groundTruth":  5,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00065.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00067.jpeg",
+        "groundTruth":  11,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00067.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00068.jpeg",
+        "groundTruth":  9,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00068.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00074.jpeg",
+        "groundTruth":  13,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00074.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00075.jpeg",
+        "groundTruth":  10,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00075.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00077.jpeg",
+        "groundTruth":  8,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00077.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00088.jpeg",
+        "groundTruth":  10,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00088.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00093.jpeg",
+        "groundTruth":  11,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00093.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00098.jpeg",
+        "groundTruth":  13,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00098.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00103.jpeg",
+        "groundTruth":  16,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00103.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00132.jpeg",
+        "groundTruth":  7,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00132.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00135.jpeg",
+        "groundTruth":  10,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00135.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00136.jpeg",
+        "groundTruth":  9,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00136.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00137.jpeg",
+        "groundTruth":  5,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00137.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00149.jpeg",
+        "groundTruth":  8,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00149.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00157.jpeg",
+        "groundTruth":  3,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00157.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00161.jpeg",
+        "groundTruth":  13,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00161.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00167.jpeg",
+        "groundTruth":  14,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00167.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00169.jpeg",
+        "groundTruth":  16,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00169.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00171.jpeg",
+        "groundTruth":  13,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00171.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00172.jpeg",
+        "groundTruth":  14,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00172.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00178.jpeg",
+        "groundTruth":  12,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00178.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00180.jpeg",
+        "groundTruth":  10,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00180.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00184.jpeg",
+        "groundTruth":  9,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00184.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00205.jpeg",
+        "groundTruth":  13,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00205.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00208.jpeg",
+        "groundTruth":  13,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00208.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00220.jpeg",
+        "groundTruth":  9,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00220.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00225.jpeg",
+        "groundTruth":  13,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00225.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00226.jpeg",
+        "groundTruth":  15,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00226.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00227.jpeg",
+        "groundTruth":  11,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00227.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00229.jpeg",
+        "groundTruth":  10,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00229.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00233.jpeg",
+        "groundTruth":  6,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00233.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00234.jpeg",
+        "groundTruth":  10,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00234.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00249.jpeg",
+        "groundTruth":  0,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00249.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00253.jpeg",
+        "groundTruth":  9,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00253.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00271.jpeg",
+        "groundTruth":  11,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00271.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00282.jpeg",
+        "groundTruth":  14,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00282.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00284.jpeg",
+        "groundTruth":  10,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00284.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00287.jpeg",
+        "groundTruth":  14,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00287.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00290.jpeg",
+        "groundTruth":  11,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00290.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00293.jpeg",
+        "groundTruth":  10,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00293.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00296.jpeg",
+        "groundTruth":  12,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00296.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00303.jpeg",
+        "groundTruth":  0,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00303.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00319.jpeg",
+        "groundTruth":  10,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00319.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00320.jpeg",
+        "groundTruth":  11,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00320.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00323.jpeg",
+        "groundTruth":  5,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00323.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00327.jpeg",
+        "groundTruth":  0,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00327.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00333.jpeg",
+        "groundTruth":  14,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00333.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00341.jpeg",
+        "groundTruth":  9,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00341.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00346.jpeg",
+        "groundTruth":  13,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00346.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00360.jpeg",
+        "groundTruth":  11,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00360.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00365.jpeg",
+        "groundTruth":  12,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00365.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00366.jpeg",
+        "groundTruth":  14,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00366.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00375.jpeg",
+        "groundTruth":  12,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00375.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00385.jpeg",
+        "groundTruth":  14,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00385.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00390.jpeg",
+        "groundTruth":  10,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00390.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00391.jpeg",
+        "groundTruth":  14,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00391.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00407.jpeg",
+        "groundTruth":  15,
+        "split":  "test",
+        "annotation":  "data/test/ann/BloodImage_00407.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00001.jpeg",
+        "groundTruth":  18,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00001.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00003.jpeg",
+        "groundTruth":  15,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00003.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00004.jpeg",
+        "groundTruth":  11,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00004.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00005.jpeg",
+        "groundTruth":  18,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00005.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00006.jpeg",
+        "groundTruth":  14,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00006.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00008.jpeg",
+        "groundTruth":  19,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00008.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00009.jpeg",
+        "groundTruth":  16,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00009.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00010.jpeg",
+        "groundTruth":  16,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00010.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00012.jpeg",
+        "groundTruth":  16,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00012.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00013.jpeg",
+        "groundTruth":  14,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00013.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00020.jpeg",
+        "groundTruth":  19,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00020.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00022.jpeg",
+        "groundTruth":  12,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00022.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00023.jpeg",
+        "groundTruth":  16,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00023.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00024.jpeg",
+        "groundTruth":  15,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00024.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00026.jpeg",
+        "groundTruth":  16,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00026.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00032.jpeg",
+        "groundTruth":  23,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00032.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00034.jpeg",
+        "groundTruth":  15,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00034.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00036.jpeg",
+        "groundTruth":  18,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00036.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00038.jpeg",
+        "groundTruth":  25,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00038.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00039.jpeg",
+        "groundTruth":  16,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00039.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00040.jpeg",
+        "groundTruth":  14,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00040.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00042.jpeg",
+        "groundTruth":  13,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00042.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00043.jpeg",
+        "groundTruth":  12,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00043.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00044.jpeg",
+        "groundTruth":  13,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00044.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00045.jpeg",
+        "groundTruth":  23,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00045.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00046.jpeg",
+        "groundTruth":  22,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00046.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00047.jpeg",
+        "groundTruth":  17,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00047.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00048.jpeg",
+        "groundTruth":  15,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00048.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00049.jpeg",
+        "groundTruth":  17,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00049.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00050.jpeg",
+        "groundTruth":  10,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00050.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00052.jpeg",
+        "groundTruth":  15,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00052.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00054.jpeg",
+        "groundTruth":  13,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00054.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00056.jpeg",
+        "groundTruth":  11,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00056.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00059.jpeg",
+        "groundTruth":  12,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00059.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00069.jpeg",
+        "groundTruth":  12,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00069.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00070.jpeg",
+        "groundTruth":  10,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00070.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00071.jpeg",
+        "groundTruth":  8,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00071.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00076.jpeg",
+        "groundTruth":  11,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00076.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00078.jpeg",
+        "groundTruth":  11,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00078.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00079.jpeg",
+        "groundTruth":  15,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00079.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00081.jpeg",
+        "groundTruth":  14,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00081.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00082.jpeg",
+        "groundTruth":  10,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00082.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00083.jpeg",
+        "groundTruth":  13,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00083.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00086.jpeg",
+        "groundTruth":  10,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00086.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00087.jpeg",
+        "groundTruth":  7,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00087.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00090.jpeg",
+        "groundTruth":  12,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00090.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00091.jpeg",
+        "groundTruth":  9,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00091.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00092.jpeg",
+        "groundTruth":  12,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00092.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00094.jpeg",
+        "groundTruth":  17,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00094.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00095.jpeg",
+        "groundTruth":  15,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00095.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00097.jpeg",
+        "groundTruth":  16,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00097.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00100.jpeg",
+        "groundTruth":  15,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00100.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00101.jpeg",
+        "groundTruth":  13,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00101.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00106.jpeg",
+        "groundTruth":  15,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00106.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00107.jpeg",
+        "groundTruth":  12,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00107.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00108.jpeg",
+        "groundTruth":  14,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00108.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00110.jpeg",
+        "groundTruth":  10,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00110.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00112.jpeg",
+        "groundTruth":  13,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00112.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00113.jpeg",
+        "groundTruth":  11,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00113.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00114.jpeg",
+        "groundTruth":  14,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00114.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00117.jpeg",
+        "groundTruth":  10,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00117.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00120.jpeg",
+        "groundTruth":  9,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00120.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00123.jpeg",
+        "groundTruth":  8,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00123.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00124.jpeg",
+        "groundTruth":  10,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00124.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00126.jpeg",
+        "groundTruth":  11,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00126.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00127.jpeg",
+        "groundTruth":  5,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00127.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00133.jpeg",
+        "groundTruth":  9,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00133.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00134.jpeg",
+        "groundTruth":  0,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00134.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00139.jpeg",
+        "groundTruth":  9,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00139.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00141.jpeg",
+        "groundTruth":  9,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00141.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00142.jpeg",
+        "groundTruth":  6,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00142.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00144.jpeg",
+        "groundTruth":  9,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00144.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00150.jpeg",
+        "groundTruth":  0,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00150.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00154.jpeg",
+        "groundTruth":  6,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00154.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00156.jpeg",
+        "groundTruth":  9,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00156.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00158.jpeg",
+        "groundTruth":  5,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00158.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00159.jpeg",
+        "groundTruth":  5,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00159.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00160.jpeg",
+        "groundTruth":  9,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00160.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00163.jpeg",
+        "groundTruth":  6,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00163.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00164.jpeg",
+        "groundTruth":  10,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00164.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00165.jpeg",
+        "groundTruth":  10,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00165.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00166.jpeg",
+        "groundTruth":  11,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00166.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00168.jpeg",
+        "groundTruth":  16,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00168.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00170.jpeg",
+        "groundTruth":  13,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00170.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00174.jpeg",
+        "groundTruth":  13,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00174.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00175.jpeg",
+        "groundTruth":  9,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00175.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00176.jpeg",
+        "groundTruth":  11,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00176.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00177.jpeg",
+        "groundTruth":  11,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00177.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00179.jpeg",
+        "groundTruth":  12,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00179.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00182.jpeg",
+        "groundTruth":  9,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00182.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00187.jpeg",
+        "groundTruth":  6,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00187.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00189.jpeg",
+        "groundTruth":  13,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00189.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00190.jpeg",
+        "groundTruth":  12,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00190.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00191.jpeg",
+        "groundTruth":  14,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00191.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00195.jpeg",
+        "groundTruth":  10,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00195.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00196.jpeg",
+        "groundTruth":  10,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00196.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00197.jpeg",
+        "groundTruth":  11,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00197.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00198.jpeg",
+        "groundTruth":  14,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00198.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00199.jpeg",
+        "groundTruth":  10,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00199.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00200.jpeg",
+        "groundTruth":  9,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00200.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00201.jpeg",
+        "groundTruth":  9,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00201.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00202.jpeg",
+        "groundTruth":  12,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00202.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00203.jpeg",
+        "groundTruth":  9,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00203.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00204.jpeg",
+        "groundTruth":  14,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00204.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00206.jpeg",
+        "groundTruth":  14,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00206.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00210.jpeg",
+        "groundTruth":  12,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00210.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00211.jpeg",
+        "groundTruth":  12,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00211.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00212.jpeg",
+        "groundTruth":  13,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00212.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00214.jpeg",
+        "groundTruth":  15,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00214.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00215.jpeg",
+        "groundTruth":  13,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00215.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00224.jpeg",
+        "groundTruth":  0,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00224.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00231.jpeg",
+        "groundTruth":  8,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00231.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00232.jpeg",
+        "groundTruth":  9,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00232.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00235.jpeg",
+        "groundTruth":  3,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00235.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00237.jpeg",
+        "groundTruth":  11,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00237.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00239.jpeg",
+        "groundTruth":  11,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00239.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00240.jpeg",
+        "groundTruth":  8,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00240.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00242.jpeg",
+        "groundTruth":  14,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00242.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00243.jpeg",
+        "groundTruth":  11,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00243.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00247.jpeg",
+        "groundTruth":  13,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00247.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00248.jpeg",
+        "groundTruth":  11,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00248.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00250.jpeg",
+        "groundTruth":  0,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00250.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00251.jpeg",
+        "groundTruth":  8,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00251.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00252.jpeg",
+        "groundTruth":  9,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00252.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00254.jpeg",
+        "groundTruth":  9,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00254.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00256.jpeg",
+        "groundTruth":  5,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00256.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00257.jpeg",
+        "groundTruth":  7,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00257.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00258.jpeg",
+        "groundTruth":  0,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00258.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00259.jpeg",
+        "groundTruth":  7,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00259.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00263.jpeg",
+        "groundTruth":  12,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00263.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00264.jpeg",
+        "groundTruth":  13,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00264.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00265.jpeg",
+        "groundTruth":  10,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00265.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00266.jpeg",
+        "groundTruth":  12,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00266.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00267.jpeg",
+        "groundTruth":  0,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00267.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00268.jpeg",
+        "groundTruth":  0,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00268.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00270.jpeg",
+        "groundTruth":  3,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00270.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00273.jpeg",
+        "groundTruth":  12,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00273.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00275.jpeg",
+        "groundTruth":  14,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00275.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00276.jpeg",
+        "groundTruth":  12,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00276.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00278.jpeg",
+        "groundTruth":  12,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00278.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00279.jpeg",
+        "groundTruth":  13,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00279.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00281.jpeg",
+        "groundTruth":  10,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00281.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00283.jpeg",
+        "groundTruth":  12,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00283.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00288.jpeg",
+        "groundTruth":  18,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00288.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00289.jpeg",
+        "groundTruth":  10,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00289.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00291.jpeg",
+        "groundTruth":  9,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00291.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00292.jpeg",
+        "groundTruth":  13,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00292.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00294.jpeg",
+        "groundTruth":  10,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00294.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00295.jpeg",
+        "groundTruth":  11,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00295.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00297.jpeg",
+        "groundTruth":  9,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00297.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00299.jpeg",
+        "groundTruth":  8,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00299.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00300.jpeg",
+        "groundTruth":  13,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00300.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00301.jpeg",
+        "groundTruth":  13,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00301.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00302.jpeg",
+        "groundTruth":  12,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00302.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00305.jpeg",
+        "groundTruth":  13,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00305.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00307.jpeg",
+        "groundTruth":  12,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00307.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00308.jpeg",
+        "groundTruth":  11,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00308.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00309.jpeg",
+        "groundTruth":  12,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00309.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00311.jpeg",
+        "groundTruth":  8,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00311.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00313.jpeg",
+        "groundTruth":  10,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00313.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00314.jpeg",
+        "groundTruth":  10,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00314.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00317.jpeg",
+        "groundTruth":  13,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00317.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00318.jpeg",
+        "groundTruth":  11,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00318.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00322.jpeg",
+        "groundTruth":  0,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00322.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00324.jpeg",
+        "groundTruth":  11,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00324.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00325.jpeg",
+        "groundTruth":  11,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00325.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00332.jpeg",
+        "groundTruth":  9,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00332.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00335.jpeg",
+        "groundTruth":  11,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00335.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00336.jpeg",
+        "groundTruth":  10,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00336.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00339.jpeg",
+        "groundTruth":  15,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00339.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00343.jpeg",
+        "groundTruth":  9,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00343.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00344.jpeg",
+        "groundTruth":  12,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00344.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00345.jpeg",
+        "groundTruth":  12,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00345.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00347.jpeg",
+        "groundTruth":  18,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00347.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00348.jpeg",
+        "groundTruth":  14,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00348.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00351.jpeg",
+        "groundTruth":  14,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00351.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00353.jpeg",
+        "groundTruth":  13,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00353.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00354.jpeg",
+        "groundTruth":  15,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00354.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00355.jpeg",
+        "groundTruth":  14,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00355.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00356.jpeg",
+        "groundTruth":  16,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00356.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00357.jpeg",
+        "groundTruth":  13,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00357.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00359.jpeg",
+        "groundTruth":  14,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00359.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00361.jpeg",
+        "groundTruth":  14,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00361.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00362.jpeg",
+        "groundTruth":  11,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00362.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00364.jpeg",
+        "groundTruth":  14,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00364.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00369.jpeg",
+        "groundTruth":  17,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00369.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00370.jpeg",
+        "groundTruth":  14,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00370.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00371.jpeg",
+        "groundTruth":  12,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00371.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00372.jpeg",
+        "groundTruth":  12,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00372.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00374.jpeg",
+        "groundTruth":  9,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00374.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00376.jpeg",
+        "groundTruth":  10,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00376.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00377.jpeg",
+        "groundTruth":  13,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00377.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00378.jpeg",
+        "groundTruth":  15,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00378.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00379.jpeg",
+        "groundTruth":  18,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00379.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00382.jpeg",
+        "groundTruth":  13,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00382.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00384.jpeg",
+        "groundTruth":  10,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00384.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00387.jpeg",
+        "groundTruth":  10,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00387.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00388.jpeg",
+        "groundTruth":  10,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00388.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00393.jpeg",
+        "groundTruth":  11,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00393.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00395.jpeg",
+        "groundTruth":  14,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00395.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00400.jpeg",
+        "groundTruth":  12,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00400.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00403.jpeg",
+        "groundTruth":  15,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00403.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00404.jpeg",
+        "groundTruth":  13,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00404.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00405.jpeg",
+        "groundTruth":  14,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00405.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00408.jpeg",
+        "groundTruth":  15,
+        "split":  "train",
+        "annotation":  "data/train/ann/BloodImage_00408.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00000.jpeg",
+        "groundTruth":  19,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00000.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00002.jpeg",
+        "groundTruth":  15,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00002.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00014.jpeg",
+        "groundTruth":  16,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00014.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00017.jpeg",
+        "groundTruth":  16,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00017.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00028.jpeg",
+        "groundTruth":  21,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00028.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00029.jpeg",
+        "groundTruth":  22,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00029.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00030.jpeg",
+        "groundTruth":  21,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00030.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00035.jpeg",
+        "groundTruth":  19,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00035.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00037.jpeg",
+        "groundTruth":  27,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00037.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00053.jpeg",
+        "groundTruth":  11,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00053.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00055.jpeg",
+        "groundTruth":  10,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00055.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00064.jpeg",
+        "groundTruth":  10,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00064.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00066.jpeg",
+        "groundTruth":  8,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00066.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00072.jpeg",
+        "groundTruth":  3,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00072.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00073.jpeg",
+        "groundTruth":  11,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00073.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00089.jpeg",
+        "groundTruth":  10,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00089.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00099.jpeg",
+        "groundTruth":  15,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00099.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00104.jpeg",
+        "groundTruth":  14,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00104.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00109.jpeg",
+        "groundTruth":  11,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00109.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00111.jpeg",
+        "groundTruth":  15,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00111.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00115.jpeg",
+        "groundTruth":  14,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00115.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00125.jpeg",
+        "groundTruth":  10,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00125.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00130.jpeg",
+        "groundTruth":  8,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00130.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00140.jpeg",
+        "groundTruth":  8,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00140.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00143.jpeg",
+        "groundTruth":  5,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00143.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00145.jpeg",
+        "groundTruth":  10,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00145.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00147.jpeg",
+        "groundTruth":  0,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00147.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00148.jpeg",
+        "groundTruth":  4,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00148.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00152.jpeg",
+        "groundTruth":  0,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00152.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00162.jpeg",
+        "groundTruth":  11,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00162.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00183.jpeg",
+        "groundTruth":  7,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00183.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00192.jpeg",
+        "groundTruth":  11,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00192.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00193.jpeg",
+        "groundTruth":  7,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00193.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00207.jpeg",
+        "groundTruth":  11,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00207.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00209.jpeg",
+        "groundTruth":  11,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00209.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00216.jpeg",
+        "groundTruth":  15,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00216.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00217.jpeg",
+        "groundTruth":  12,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00217.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00218.jpeg",
+        "groundTruth":  10,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00218.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00219.jpeg",
+        "groundTruth":  8,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00219.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00221.jpeg",
+        "groundTruth":  10,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00221.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00222.jpeg",
+        "groundTruth":  9,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00222.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00223.jpeg",
+        "groundTruth":  12,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00223.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00228.jpeg",
+        "groundTruth":  11,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00228.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00230.jpeg",
+        "groundTruth":  10,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00230.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00236.jpeg",
+        "groundTruth":  6,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00236.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00241.jpeg",
+        "groundTruth":  6,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00241.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00244.jpeg",
+        "groundTruth":  14,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00244.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00245.jpeg",
+        "groundTruth":  15,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00245.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00246.jpeg",
+        "groundTruth":  12,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00246.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00255.jpeg",
+        "groundTruth":  11,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00255.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00260.jpeg",
+        "groundTruth":  5,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00260.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00261.jpeg",
+        "groundTruth":  8,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00261.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00262.jpeg",
+        "groundTruth":  9,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00262.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00269.jpeg",
+        "groundTruth":  8,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00269.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00272.jpeg",
+        "groundTruth":  13,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00272.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00274.jpeg",
+        "groundTruth":  6,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00274.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00277.jpeg",
+        "groundTruth":  13,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00277.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00285.jpeg",
+        "groundTruth":  11,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00285.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00298.jpeg",
+        "groundTruth":  9,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00298.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00304.jpeg",
+        "groundTruth":  11,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00304.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00310.jpeg",
+        "groundTruth":  11,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00310.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00312.jpeg",
+        "groundTruth":  7,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00312.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00315.jpeg",
+        "groundTruth":  10,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00315.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00326.jpeg",
+        "groundTruth":  10,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00326.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00330.jpeg",
+        "groundTruth":  0,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00330.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00331.jpeg",
+        "groundTruth":  14,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00331.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00334.jpeg",
+        "groundTruth":  10,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00334.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00337.jpeg",
+        "groundTruth":  13,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00337.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00338.jpeg",
+        "groundTruth":  13,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00338.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00340.jpeg",
+        "groundTruth":  11,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00340.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00342.jpeg",
+        "groundTruth":  8,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00342.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00349.jpeg",
+        "groundTruth":  13,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00349.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00350.jpeg",
+        "groundTruth":  0,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00350.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00352.jpeg",
+        "groundTruth":  12,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00352.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00367.jpeg",
+        "groundTruth":  14,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00367.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00368.jpeg",
+        "groundTruth":  13,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00368.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00381.jpeg",
+        "groundTruth":  15,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00381.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00383.jpeg",
+        "groundTruth":  8,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00383.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00386.jpeg",
+        "groundTruth":  14,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00386.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00389.jpeg",
+        "groundTruth":  5,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00389.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00392.jpeg",
+        "groundTruth":  14,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00392.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00396.jpeg",
+        "groundTruth":  17,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00396.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00397.jpeg",
+        "groundTruth":  17,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00397.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00398.jpeg",
+        "groundTruth":  14,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00398.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00402.jpeg",
+        "groundTruth":  13,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00402.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00409.jpeg",
+        "groundTruth":  14,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00409.jpeg.json"
+    },
+    {
+        "id":  "BloodImage_00410.jpeg",
+        "groundTruth":  13,
+        "split":  "val",
+        "annotation":  "data/val/ann/BloodImage_00410.jpeg.json"
+    }
+]

@@ -1,7 +1,7 @@
 function out = countByAreaEstimate(mask, rgb, config)
 %COUNTBYAREAESTIMATE Estimate count from component area for attached cells.
 
-filtered = filterCountingMask(mask, config);
+filtered = filterCountingMask(mask, config, false);
 cc = bwconncomp(filtered);
 stats = regionprops("table", cc, "Area", "Centroid", "Eccentricity", "MajorAxisLength", "MinorAxisLength", "Solidity");
 

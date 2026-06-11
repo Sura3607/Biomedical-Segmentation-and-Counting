@@ -1,7 +1,7 @@
 function out = countByWatershed(mask, rgb, config)
 %COUNTBYWATERSHED Split attached cells using marker-controlled watershed.
 
-filtered = filterCountingMask(mask, config);
+filtered = filterCountingMask(mask, config, false);
 
 distanceMap = bwdist(~filtered);
 distanceMap = imhmin(distanceMap, config.counting.watershedHMin);
@@ -14,7 +14,7 @@ labelsWs = watershed(imposed);
 
 splitMask = filtered;
 splitMask(labelsWs == 0) = false;
-splitMask = filterCountingMask(splitMask, config);
+splitMask = filterCountingMask(splitMask, config, true);
 
 cc = bwconncomp(splitMask);
 stats = regionprops("table", cc, "Area", "Centroid", "Eccentricity", "MajorAxisLength", "MinorAxisLength", "Solidity");

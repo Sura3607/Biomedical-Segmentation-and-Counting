@@ -1,0 +1,5 @@
+k,threshold,modelPath,validationPixelF1,validationPixelAUC,validationCountMAE,validationCountRMSE,validationNormalizedCountAccuracy,isBestCandidate,isSelected
+3,0.563483566678291,D:\Projects\Biomedical-Segmentation-and-Counting\models\kmeans_rbc_k3.mat,0.572337155153446,0.653340530845082,5.50574712643678,7.11239811150583,0.535350973603616,1,1
+4,0.566351283577125,D:\Projects\Biomedical-Segmentation-and-Counting\models\kmeans_rbc_k4.mat,0.558307808103972,0.645880578198674,5.48275862068965,7.51932376514388,0.562302237247969,1,0
+5,0.629852375070455,D:\Projects\Biomedical-Segmentation-and-Counting\models\kmeans_rbc_k5.mat,0.558225997262056,0.652846781647822,6.31034482758621,8.13746832894591,0.504257511576646,0,0
+2,0.426993406626823,D:\Projects\Biomedical-Segmentation-and-Counting\models\kmeans_rbc_k2.mat,0.547360045526085,0.533476270596864,11.0344827586207,11.9961679705234,0.0537542485311248,0,0

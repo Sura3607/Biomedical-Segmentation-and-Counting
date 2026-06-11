@@ -1,135 +1,125 @@
-# MATLAB Demo: RBC Segmentation and Counting
+# MATLAB RBC Segmentation and Counting
 
-This demo follows the comparison structure:
-
-```text
-algorithm segmentation -> shared counting
-kmeans segmentation    -> shared counting
-```
-
-The counting stage is intentionally shared so the comparison focuses on
-segmentation quality first.
-
-## Pipeline
-
-1. Read an RGB blood-cell image.
-2. Extract configured color channels for the algorithm baseline.
-3. Build `rbc_algorithm_mask` using thresholding and morphology.
-4. Build `rbc_kmeans_mask` using pixel-level K-means features.
-5. Count each mask with the same methods:
-   - connected components
-   - watershed
-   - area estimate
-6. Save masks, overlays, summary table, and metrics if a ground-truth count is configured.
-
-## K-means Segmentation Input
-
-For each pixel, the K-means branch builds this feature row:
+This project compares two RBC segmentation paths and applies shared counting
+methods to each mask:
 
 ```text
-[L, A, BLab, S, V, rNorm, gNorm, bNorm, BminusR, RminusG, x, y]
+algorithm segmentation -> connected components / watershed / area estimate
+K-means segmentation   -> connected components / watershed / area estimate
 ```
 
-Where:
+The dataset annotations are expected locally under `data/`, while the tracked
+metadata file `data/metadata_coutingrbc.json` stores image id, split, and RBC
+ground-truth count.
 
-- `L, A, BLab` come from Lab color.
-- `S, V` come from HSV.
-- `rNorm, gNorm, bNorm` are RGB normalized by `R + G + B`.
-- `BminusR` helps identify purple/blue WBC regions.
-- `RminusG` helps identify pink/red RBC regions.
-- `x, y` are normalized coordinates with a small weight.
+## Run the App
 
-K-means clusters pixels into color/position groups. The code then scores each
-cluster as RBC, WBC, background, or other. The WBC cluster is excluded from the
-RBC mask before cleanup.
-
-## Project Structure
-
-```text
-Biomedical-Segmentation-and-Counting/
-|-- README.md
-|-- config_default.m
-|-- setupFinalPath.m
-|-- dataset/
-|   `-- raw/
-|-- docs/
-|   |-- evaluation_charts.ipynb
-|   |-- report_assets/
-|   `-- .gitkeep
-|-- methods/
-|   |-- countByAreaEstimate.m
-|   |-- countByConnectedComponents.m
-|   |-- countByWatershed.m
-|   |-- countRBCPipeline.m
-|   |-- segmentRBC.m
-|   |-- segmentRBCKMeans.m
-|   |-- segmentWBC.m
-|   `-- selectBestChannels.m
-|-- report/
-|   |-- *.png
-|   |-- *.csv
-|   `-- demo_result.mat
-`-- script/
-    |-- cleanupBinaryMask.m
-    |-- drawCountOverlay.m
-    |-- evaluateCounts.m
-    |-- filterCountingMask.m
-    `-- showOverlay.m
-```
-
-- `report`: stores generated result images, result tables, metrics, and MAT files.
-- `docs`: stores report assets and evaluation notebooks.
-- `docs/evaluation_charts.ipynb`: evaluation notebook for charts and visual result grids.
-- `script`: stores reusable helper functions and standalone utility code.
-- `dataset`: stores input data and raw images.
-- `methods`: stores segmentation algorithms, counting methods, and model-based methods.
-- Root files such as `README.md`, `config_default.m`, and `setupFinalPath.m` stay at the project root.
-
-## Run
-
-Open MATLAB at the repository root:
+Open MATLAB at the repository root and run:
 
 ```matlab
-main_demo
+RBCApp
 ```
 
-For MATLAB Mobile/MATLAB Online:
+The app supports:
 
-```matlab
-mobile_capture_demo
-```
+- segmentation choice: algorithm, K-means, or both
+- counting method choice: connected components, watershed, or area estimate
+- K-means model choice: `k = 2, 3, 4, 5`
 
-If mobile capture fails, the mobile script falls back to the default image.
+K-means mode loads persisted models from `models/`. Run the evaluation notebook
+first if model files are missing.
 
-## Main Outputs
+## Run Evaluation
 
-Outputs are saved in:
+Open and run:
 
 ```text
-report/
+notebooks/evaluations.mlx
 ```
 
-Important files:
+If your MATLAB installation cannot open the Live Script file directly, run the
+same source as a script:
 
-- `summary.csv`
-- `metrics.csv`
-- `kmeans_cluster_stats.csv`
-- `demo_result.mat`
-- `wbc_algorithm_mask.png`
-- `wbc_kmeans_mask.png`
-- `rbc_algorithm_mask.png`
-- `rbc_kmeans_mask.png`
-- `overlay_algorithm.png`
-- `overlay_kmeans.png`
-- `kmeans_cluster_map.png`
-- `count_overlay_algorithm_*.png`
-- `count_overlay_kmeans_*.png`
+```matlab
+run("notebooks/evaluations.m")
+```
+
+The evaluation workflow:
+
+1. Loads `data/metadata_coutingrbc.json`.
+2. Trains K-means models for `k = 2, 3, 4, 5` on `data/train`.
+3. Selects the best `k` on `data/val` by watershed count MAE. If count MAE is
+   effectively tied, the higher pixel F1 wins.
+4. Retrains the selected `k` on train+val.
+5. Evaluates algorithm and best K-means on `data/test`.
+
+Ground-truth masks for pixel metrics are approximated by rasterizing RBC
+annotation rectangles.
+
+## Outputs
+
+Evaluation artifacts are written to:
+
+```text
+outputs/
+|-- metrics/
+|   |-- validation_k_selection.csv
+|   |-- test_per_image_metrics.csv
+|   `-- test_summary_metrics.csv
+|-- plots/
+|   |-- validation_k_selection.png
+|   |-- test_pixel_f1_by_method.png
+|   |-- test_count_mae_by_method.png
+|   `-- test_auc_by_method.png
+```
+
+K-means models are saved to:
+
+```text
+models/
+|-- kmeans_rbc_k2.mat
+|-- kmeans_rbc_k3.mat
+|-- kmeans_rbc_k4.mat
+|-- kmeans_rbc_k5.mat
+`-- kmeans_rbc_best.mat
+```
+
+## Metrics
+
+The evaluation computes:
+
+- count metrics: MAE, RMSE, MAPE, exact-match accuracy, normalized count accuracy
+- pixel metrics: accuracy, precision, recall, F1, IoU, ROC/AUC
+- validation K-selection metrics and plots
+- final test comparison plots for algorithm vs K-means/counting methods
+
+Per-image overlays are disabled by default to avoid generating hundreds of
+images. Set `config.evaluation.saveTestOverlays = true` in `config_default.m`
+if you need them.
+
+## Dataset Layout
+
+Expected local layout:
+
+```text
+data/
+|-- metadata_coutingrbc.json
+|-- train/
+|   |-- img/
+|   `-- ann/
+|-- val/
+|   |-- img/
+|   `-- ann/
+`-- test/
+    |-- img/
+    `-- ann/
+```
+
+Raw dataset files under `data/` are ignored by Git except
+`data/metadata_coutingrbc.json`.
 
 ## Required Toolboxes
 
 - Image Processing Toolbox
 - Statistics and Machine Learning Toolbox for K-means
 - Computer Vision Toolbox is optional for text labels on overlays
-
-If `kmeans` is unavailable, the algorithm segmentation branch still runs and the
-K-means segmentation branch returns an empty mask with a diagnostic note.

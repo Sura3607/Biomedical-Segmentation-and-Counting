@@ -1,11 +1,14 @@
 classdef RBCApp < matlab.apps.AppBase
-    %RBCAPP Simple App Designer-style interface for the RBC demo.
+    %RBCAPP App interface for RBC segmentation and counting.
 
     properties (Access = public)
         UIFigure matlab.ui.Figure
         LoadImageButton matlab.ui.control.Button
         RunButton matlab.ui.control.Button
         ExportButton matlab.ui.control.Button
+        SegmentationDropDown matlab.ui.control.DropDown
+        CountingDropDown matlab.ui.control.DropDown
+        KDropDown matlab.ui.control.DropDown
         ImagePathLabel matlab.ui.control.Label
         StatusLabel matlab.ui.control.Label
         OriginalAxes matlab.ui.control.UIAxes
@@ -21,6 +24,7 @@ classdef RBCApp < matlab.apps.AppBase
         ImagePath char
         Result struct
         Summary table
+        FilteredSummary table
     end
 
     methods (Access = private)
@@ -31,6 +35,7 @@ classdef RBCApp < matlab.apps.AppBase
             app.Config = config_default();
             app.ImagePath = char(app.Config.imagePath);
             app.Summary = table();
+            app.FilteredSummary = table();
 
             app.ImagePathLabel.Text = app.ImagePath;
             app.StatusLabel.Text = "Ready. Load an image or run the default sample.";
@@ -54,6 +59,7 @@ classdef RBCApp < matlab.apps.AppBase
             app.ImagePathLabel.Text = app.ImagePath;
             app.Result = struct();
             app.Summary = table();
+            app.FilteredSummary = table();
             app.ResultsTable.Data = table();
             app.StatusLabel.Text = "Image loaded. Press Run Pipeline.";
 
@@ -67,23 +73,42 @@ classdef RBCApp < matlab.apps.AppBase
                 return;
             end
 
+            selectedSegmentation = string(app.SegmentationDropDown.Value);
+            includeKMeans = selectedSegmentation == "K-means" || selectedSegmentation == "Both";
+            selectedK = str2double(app.KDropDown.Value);
+            modelPath = fullfile(app.Config.modelDir, sprintf("kmeans_rbc_k%d.mat", selectedK));
+
+            if includeKMeans && ~isfile(modelPath)
+                uialert(app.UIFigure, ...
+                    sprintf("Missing K-means model for k=%d:\n%s\n\nRun notebooks/evaluations.mlx first.", selectedK, modelPath), ...
+                    "Missing K-means model");
+                return;
+            end
+
             app.setBusy(true, "Running segmentation and RBC counting...");
             drawnow;
 
             try
                 app.Config.imagePath = app.ImagePath;
+                app.Config.groundTruth.rbcCount = lookupRBCGroundTruth(app.ImagePath, app.Config.metadataPath);
+                app.Config.ml.kmeans.enabled = includeKMeans;
+                app.Config.ml.kmeans.k = selectedK;
+                if includeKMeans
+                    app.Config.ml.kmeans.modelPath = modelPath;
+                else
+                    app.Config.ml.kmeans.modelPath = "";
+                end
+
                 app.Result = countRBCPipeline(app.ImagePath, app.Config);
                 app.Summary = struct2table(app.Result.counts);
+                app.FilteredSummary = app.filteredSummary();
+                app.ResultsTable.Data = app.FilteredSummary;
 
-                app.ResultsTable.Data = app.Summary;
                 app.showImage(app.OriginalAxes, app.Result.original, "Original image");
-                app.showImage(app.AlgorithmAxes, app.Result.overlays.algorithmMask, "Algorithm RBC overlay");
-                app.showImage(app.KMeansAxes, app.Result.overlays.kmeansMask, "K-means RBC overlay");
-                app.showBestCountOverlay();
+                app.showSelectedSegmentationOverlays(selectedSegmentation);
+                app.showSelectedCountOverlay();
 
-                bestRow = app.bestSummaryRow();
-                app.StatusLabel.Text = sprintf("Done. Best demo result: %s = %d RBC.", ...
-                    char(bestRow.method), bestRow.count);
+                app.StatusLabel.Text = app.statusText();
             catch err
                 app.StatusLabel.Text = "Pipeline failed.";
                 uialert(app.UIFigure, err.message, "RBC pipeline error");
@@ -93,7 +118,7 @@ classdef RBCApp < matlab.apps.AppBase
         end
 
         function exportResults(app)
-            if isempty(app.Summary) || height(app.Summary) == 0
+            if isempty(app.FilteredSummary) || height(app.FilteredSummary) == 0
                 uialert(app.UIFigure, "Run the pipeline before exporting.", "No results");
                 return;
             end
@@ -103,60 +128,121 @@ classdef RBCApp < matlab.apps.AppBase
             end
 
             summaryPath = fullfile(app.Config.outputDir, "app_summary.csv");
-            writetable(app.Summary, summaryPath);
+            writetable(app.FilteredSummary, summaryPath);
 
             if isfield(app.Result, "overlays")
-                imwrite(app.Result.overlays.algorithmMask, fullfile(app.Config.outputDir, "app_overlay_algorithm.png"));
-                imwrite(app.Result.overlays.kmeansMask, fullfile(app.Config.outputDir, "app_overlay_kmeans.png"));
+                selectedSegmentation = string(app.SegmentationDropDown.Value);
+                if selectedSegmentation == "Algorithm" || selectedSegmentation == "Both"
+                    imwrite(app.Result.overlays.algorithmMask, fullfile(app.Config.outputDir, "app_overlay_algorithm.png"));
+                end
+                if selectedSegmentation == "K-means" || selectedSegmentation == "Both"
+                    imwrite(app.Result.overlays.kmeansMask, fullfile(app.Config.outputDir, "app_overlay_kmeans.png"));
+                end
             end
 
-            app.StatusLabel.Text = "Exported results to: " + string(app.Config.outputDir);
+            app.StatusLabel.Text = "Exported selected results to: " + string(app.Config.outputDir);
         end
 
-        function showBestCountOverlay(app)
+        function summary = filteredSummary(app)
+            summary = app.Summary;
+            if isempty(summary) || height(summary) == 0
+                return;
+            end
+
+            selectedSegmentation = string(app.SegmentationDropDown.Value);
+            selectedCountingMethod = app.selectedCountingMethod();
+
+            switch selectedSegmentation
+                case "Algorithm"
+                    keepSegmentation = summary.segmentation == "algorithm";
+                case "K-means"
+                    keepSegmentation = summary.segmentation == "kmeans";
+                otherwise
+                    keepSegmentation = summary.segmentation == "algorithm" | summary.segmentation == "kmeans";
+            end
+
+            keepCounting = summary.countingMethod == selectedCountingMethod;
+            summary = summary(keepSegmentation & keepCounting, :);
+        end
+
+        function showSelectedSegmentationOverlays(app, selectedSegmentation)
+            if selectedSegmentation == "Algorithm" || selectedSegmentation == "Both"
+                app.showImage(app.AlgorithmAxes, app.Result.overlays.algorithmMask, "Algorithm RBC overlay");
+            else
+                cla(app.AlgorithmAxes);
+                title(app.AlgorithmAxes, "Algorithm overlay");
+            end
+
+            if selectedSegmentation == "K-means" || selectedSegmentation == "Both"
+                app.showImage(app.KMeansAxes, app.Result.overlays.kmeansMask, "K-means RBC overlay");
+            else
+                cla(app.KMeansAxes);
+                title(app.KMeansAxes, "K-means overlay");
+            end
+        end
+
+        function showSelectedCountOverlay(app)
             if ~isfield(app.Result, "overlays") || ~isfield(app.Result.overlays, "counts")
                 cla(app.CountAxes);
                 title(app.CountAxes, "Count overlay");
                 return;
             end
 
-            overlay = [];
-            overlayTitle = "Count overlay";
-
-            if isfield(app.Result.overlays.counts, "kmeans_watershed")
-                overlay = app.Result.overlays.counts.kmeans_watershed;
-                overlayTitle = "K-means watershed count";
-            elseif isfield(app.Result.overlays.counts, "algorithm_watershed")
-                overlay = app.Result.overlays.counts.algorithm_watershed;
-                overlayTitle = "Algorithm watershed count";
-            else
-                names = fieldnames(app.Result.overlays.counts);
-                if ~isempty(names)
-                    overlay = app.Result.overlays.counts.(names{1});
-                    overlayTitle = strrep(names{1}, "_", " ");
+            selectedSegmentation = string(app.SegmentationDropDown.Value);
+            if selectedSegmentation == "Both"
+                if any(app.FilteredSummary.segmentation == "kmeans")
+                    selectedSegmentation = "kmeans";
+                else
+                    selectedSegmentation = "algorithm";
                 end
+            elseif selectedSegmentation == "K-means"
+                selectedSegmentation = "kmeans";
+            else
+                selectedSegmentation = "algorithm";
             end
 
-            if isempty(overlay)
-                cla(app.CountAxes);
-                title(app.CountAxes, overlayTitle);
+            fieldName = char(selectedSegmentation + "_" + app.selectedCountingField());
+            if isfield(app.Result.overlays.counts, fieldName)
+                app.showImage(app.CountAxes, app.Result.overlays.counts.(fieldName), strrep(fieldName, "_", " "));
             else
-                app.showImage(app.CountAxes, overlay, overlayTitle);
+                cla(app.CountAxes);
+                title(app.CountAxes, "Count overlay");
             end
         end
 
-        function row = bestSummaryRow(app)
-            if isempty(app.Summary) || height(app.Summary) == 0
-                row = table();
+        function text = statusText(app)
+            if isempty(app.FilteredSummary) || height(app.FilteredSummary) == 0
+                text = "Done. No selected result rows.";
                 return;
             end
 
-            preferredMethod = "kmeans_watershed";
-            idx = find(app.Summary.method == preferredMethod, 1);
-            if isempty(idx)
-                idx = 1;
+            row = app.FilteredSummary(1, :);
+            text = sprintf("Done. %s = %d RBC.", char(row.method), row.count);
+            if height(app.FilteredSummary) > 1
+                text = sprintf("Done. Showing %d selected result rows.", height(app.FilteredSummary));
             end
-            row = app.Summary(idx, :);
+        end
+
+        function method = selectedCountingMethod(app)
+            switch string(app.CountingDropDown.Value)
+                case "Connected components"
+                    method = "connected_components";
+                case "Watershed"
+                    method = "watershed";
+                otherwise
+                    method = "area_estimate";
+            end
+        end
+
+        function field = selectedCountingField(app)
+            switch string(app.CountingDropDown.Value)
+                case "Connected components"
+                    field = "connectedComponents";
+                case "Watershed"
+                    field = "watershed";
+                otherwise
+                    field = "areaEstimate";
+            end
         end
 
         function showImage(~, ax, img, titleText)
@@ -183,6 +269,9 @@ classdef RBCApp < matlab.apps.AppBase
             app.LoadImageButton.Enable = matlab.lang.OnOffSwitchState(~isBusy);
             app.RunButton.Enable = matlab.lang.OnOffSwitchState(~isBusy);
             app.ExportButton.Enable = matlab.lang.OnOffSwitchState(~isBusy);
+            app.SegmentationDropDown.Enable = matlab.lang.OnOffSwitchState(~isBusy);
+            app.CountingDropDown.Enable = matlab.lang.OnOffSwitchState(~isBusy);
+            app.KDropDown.Enable = matlab.lang.OnOffSwitchState(~isBusy);
             app.StatusLabel.Text = message;
         end
     end
@@ -191,35 +280,70 @@ classdef RBCApp < matlab.apps.AppBase
         function createComponents(app)
             app.UIFigure = uifigure("Visible", "off");
             app.UIFigure.Name = "RBC Segmentation and Counting App";
-            app.UIFigure.Position = [100 100 1180 720];
+            app.UIFigure.Position = [100 100 1280 760];
 
             mainGrid = uigridlayout(app.UIFigure, [4 1]);
-            mainGrid.RowHeight = {48, 28, "1x", 210};
+            mainGrid.RowHeight = {76, 28, "1x", 210};
             mainGrid.ColumnWidth = {"1x"};
             mainGrid.Padding = [12 12 12 12];
             mainGrid.RowSpacing = 8;
 
-            toolbar = uigridlayout(mainGrid, [1 4]);
+            toolbar = uigridlayout(mainGrid, [2 8]);
             toolbar.Layout.Row = 1;
-            toolbar.ColumnWidth = {120, 130, 120, "1x"};
-            toolbar.RowHeight = {"1x"};
+            toolbar.ColumnWidth = {120, 130, 120, 95, 145, 70, 70, "1x"};
+            toolbar.RowHeight = {24, 34};
             toolbar.Padding = [0 0 0 0];
 
             app.LoadImageButton = uibutton(toolbar, "push");
             app.LoadImageButton.Text = "Load Image";
+            app.LoadImageButton.Layout.Row = 2;
+            app.LoadImageButton.Layout.Column = 1;
             app.LoadImageButton.ButtonPushedFcn = @(~, ~) app.loadImage();
 
             app.RunButton = uibutton(toolbar, "push");
             app.RunButton.Text = "Run Pipeline";
+            app.RunButton.Layout.Row = 2;
+            app.RunButton.Layout.Column = 2;
             app.RunButton.ButtonPushedFcn = @(~, ~) app.runPipeline();
 
             app.ExportButton = uibutton(toolbar, "push");
             app.ExportButton.Text = "Export CSV";
+            app.ExportButton.Layout.Row = 2;
+            app.ExportButton.Layout.Column = 3;
             app.ExportButton.ButtonPushedFcn = @(~, ~) app.exportResults();
+
+            segmentationLabel = uilabel(toolbar, "Text", "Segmentation");
+            segmentationLabel.Layout.Row = 1;
+            segmentationLabel.Layout.Column = 4;
+            app.SegmentationDropDown = uidropdown(toolbar);
+            app.SegmentationDropDown.Items = ["Algorithm", "K-means", "Both"];
+            app.SegmentationDropDown.Value = "Both";
+            app.SegmentationDropDown.Layout.Row = 2;
+            app.SegmentationDropDown.Layout.Column = 4;
+
+            countingLabel = uilabel(toolbar, "Text", "Counting");
+            countingLabel.Layout.Row = 1;
+            countingLabel.Layout.Column = 5;
+            app.CountingDropDown = uidropdown(toolbar);
+            app.CountingDropDown.Items = ["Connected components", "Watershed", "Area estimate"];
+            app.CountingDropDown.Value = "Watershed";
+            app.CountingDropDown.Layout.Row = 2;
+            app.CountingDropDown.Layout.Column = 5;
+
+            kLabel = uilabel(toolbar, "Text", "K");
+            kLabel.Layout.Row = 1;
+            kLabel.Layout.Column = 6;
+            app.KDropDown = uidropdown(toolbar);
+            app.KDropDown.Items = ["2", "3", "4", "5"];
+            app.KDropDown.Value = "3";
+            app.KDropDown.Layout.Row = 2;
+            app.KDropDown.Layout.Column = 6;
 
             app.ImagePathLabel = uilabel(toolbar);
             app.ImagePathLabel.Text = "";
             app.ImagePathLabel.WordWrap = "on";
+            app.ImagePathLabel.Layout.Row = [1 2];
+            app.ImagePathLabel.Layout.Column = [7 8];
 
             app.StatusLabel = uilabel(mainGrid);
             app.StatusLabel.Layout.Row = 2;

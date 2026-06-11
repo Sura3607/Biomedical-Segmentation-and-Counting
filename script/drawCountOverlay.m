@@ -6,11 +6,13 @@ rgb = im2uint8(rgb);
 if isempty(labels) || ~any(labels(:))
     overlay = rgb;
 else
-    boundaries = labels > 0;
-    try
-        overlay = labeloverlay(rgb, boundaries, "Colormap", [1 0 0], "Transparency", 0.65);
-    catch
-        overlay = showOverlay(rgb, boundaries, [1 0 0], 0.35);
+    overlay = rgb;
+    labelValues = setdiff(unique(labels(:))', 0);
+    for labelValue = labelValues
+        componentMask = labels == labelValue;
+        boundaries = bwperim(componentMask, 8);
+        boundaries = imdilate(boundaries, strel("disk", 1));
+        overlay = paintMask(overlay, boundaries, uint8([255 30 30]));
     end
 end
 
@@ -25,6 +27,14 @@ try
         "BoxOpacity", 0.55);
 catch
     % insertText is in Computer Vision Toolbox. Keep overlay usable without it.
+end
+
+function img = paintMask(img, mask, color)
+for c = 1:3
+    channel = img(:, :, c);
+    channel(mask) = color(c);
+    img(:, :, c) = channel;
+end
 end
 
 end

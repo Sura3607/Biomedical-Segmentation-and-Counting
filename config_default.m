@@ -4,12 +4,15 @@ function config = config_default()
 demoDir = fileparts(mfilename("fullpath"));
 
 config = struct();
-config.imagePath = fullfile(demoDir, "dataset", "raw", "BloodImage_00001.jpeg");
-config.outputDir = fullfile(demoDir, "report");
+config.projectRoot = demoDir;
+config.dataRoot = fullfile(demoDir, "data");
+config.metadataPath = fullfile(config.dataRoot, "metadata_coutingrbc.json");
+config.imagePath = fullfile(config.dataRoot, "train", "img", "BloodImage_00001.jpeg");
+config.outputDir = fullfile(demoDir, "outputs");
+config.modelDir = fullfile(demoDir, "models");
 
-% Default label for BloodImage_00001.jpeg.
-% Set to NaN when using an image without a known RBC count.
-config.groundTruth.rbcCount = 18;
+% Ground truth is looked up from metadata_coutingrbc.json by image filename.
+config.groundTruth.rbcCount = localLookupRBCGroundTruth(config.imagePath, config.metadataPath);
 
 % Channel choices from the initial Python demo/plan.
 % Search terms: rgb2hsv, rgb2lab, channel selection, imhist.
@@ -50,7 +53,7 @@ config.counting.watershedHMin = 1.0;
 % features, maps clusters to RBC/WBC/background, then sends the RBC mask to
 % the same counting methods used by the algorithm branch.
 config.ml.kmeans.enabled = true;
-config.ml.kmeans.k = 5;                     % color/texture groups, not cell count.
+config.ml.kmeans.k = 3;                     % selected by validation metrics.
 config.ml.kmeans.maxSamplePixels = 60000;   % sample pixels for centroids; 0 means all.
 config.ml.kmeans.replicates = 5;
 config.ml.kmeans.maxIter = 200;
@@ -60,8 +63,38 @@ config.ml.kmeans.maxRbcClusters = 2;
 config.ml.kmeans.rbcScoreMargin = 0.25;
 config.ml.kmeans.backgroundVMin = 0.78;
 config.ml.kmeans.backgroundSMax = 0.28;
+config.ml.kmeans.training.maxPixelsPerImage = 5000;
+config.ml.kmeans.training.candidateK = [2 3 4 5];
+config.ml.kmeans.training.selectionCountingMethod = "watershed";
+config.ml.kmeans.training.countMaeTieTolerance = 0.1;
+config.ml.kmeans.modelPath = "";
+
+% Evaluation artifacts.
+config.evaluation.saveTestOverlays = false;
 
 % Display/overlay.
 config.display.alpha = 0.35;
 
+end
+
+function trueCount = localLookupRBCGroundTruth(imagePath, metadataPath)
+trueCount = NaN;
+
+if ~isfile(metadataPath)
+    return;
+end
+
+try
+    raw = jsondecode(fileread(metadataPath));
+    ids = string({raw.id});
+    counts = double([raw.groundTruth]);
+    [~, name, ext] = fileparts(char(imagePath));
+    imageId = string([name ext]);
+    idx = find(ids == imageId, 1);
+    if ~isempty(idx)
+        trueCount = counts(idx);
+    end
+catch
+    trueCount = NaN;
+end
 end

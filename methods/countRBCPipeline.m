@@ -35,8 +35,8 @@ wbcAlgorithm = segmentWBC(rgb, channelInfo.wbc, config);
 rbcAlgorithm = segmentRBC(rgb, channelInfo.rbc, wbcAlgorithm.maskForExclusion, config);
 rbcKMeans = segmentRBCKMeans(rgb, config);
 
-algorithmCounts = runSharedCounting(rbcAlgorithm.maskFinal, rgb, config);
-kmeansCounts = runSharedCounting(rbcKMeans.maskFinal, rgb, config);
+algorithmCounts = countRBCMask(rbcAlgorithm.maskFinal, rgb, config);
+kmeansCounts = countRBCMask(rbcKMeans.maskFinal, rgb, config);
 
 result = struct();
 result.original = rgb;
@@ -89,36 +89,6 @@ scale = maxSide / max(height, width);
 
 if scale < 1
     rgb = imresize(rgb, scale);
-end
-end
-
-function counts = runSharedCounting(mask, rgb, config)
-counts = struct();
-counts.connectedComponents = countByConnectedComponents(mask, rgb, config);
-counts.watershed = countByWatershed(mask, rgb, config);
-counts.areaEstimate = countByAreaEstimate(mask, rgb, config);
-end
-
-function rows = countSummaryRows(counts, segmentationName)
-countFields = fieldnames(counts);
-template = struct( ...
-    "segmentation", "", ...
-    "countingMethod", "", ...
-    "method", "", ...
-    "count", NaN, ...
-    "componentCount", NaN, ...
-    "notes", "");
-rows = repmat(template, numel(countFields), 1);
-
-for i = 1:numel(countFields)
-    countResult = counts.(countFields{i});
-    countingMethod = string(countResult.method);
-    rows(i).segmentation = string(segmentationName);
-    rows(i).countingMethod = countingMethod;
-    rows(i).method = string(segmentationName) + "_" + countingMethod;
-    rows(i).count = countResult.count;
-    rows(i).componentCount = countResult.componentCount;
-    rows(i).notes = string(countResult.notes);
 end
 end
 

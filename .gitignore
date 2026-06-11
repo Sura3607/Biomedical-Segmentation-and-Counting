@@ -208,10 +208,22 @@ __marimo__/
 
 # MATLAB generated data
 *.mat
+!models/
+!models/*.mat
+!models/**/*.mat
 
 # Generated project outputs
 report/
 docs/report_assets/
+
+# Evaluation outputs are intentionally versioned for reports.
+!outputs/
+!outputs/**
+
+# Local dataset files
+data/**
+!data/
+!data/metadata_coutingrbc.json
 
 # Local handoff bundles
 final/

@@ -29,6 +29,7 @@ end
 
 maskFinal(wbcMask) = false;
 maskFinal = cleanupBinaryMask(maskFinal, config.rbc.minArea, config.rbc.openRadius, config.rbc.closeRadius, config.rbc.fillHoles);
+maskFinal(wbcMask) = false;
 
 out = struct();
 out.rbcNoWbc = rbcNoWbc;
@@ -50,7 +51,7 @@ end
 function mask = segmentRBCAdaptive(img, wbcMask, config)
 try
     localT = adaptthresh(img, 0.45, "ForegroundPolarity", "dark");
-    mask = imbinarize(img, localT);
+    mask = ~imbinarize(img, localT);
 catch
     mask = segmentRBCOtsu(img, wbcMask, config);
 end

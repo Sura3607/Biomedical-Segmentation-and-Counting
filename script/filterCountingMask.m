@@ -1,9 +1,17 @@
-function filtered = filterCountingMask(mask, config)
+function filtered = filterCountingMask(mask, config, applyMaxArea)
 %FILTERCOUNTINGMASK Remove tiny objects before counting.
+
+if nargin < 3
+    applyMaxArea = true;
+end
 
 filtered = logical(mask);
 filtered = bwareaopen(filtered, config.counting.minArea);
 filtered = imclose(filtered, strel("disk", 1, 0));
+
+if ~applyMaxArea
+    return;
+end
 
 cc = bwconncomp(filtered);
 stats = regionprops("table", cc, "Area");
