@@ -76,14 +76,6 @@ classdef RBCApp < matlab.apps.AppBase
             selectedSegmentation = string(app.SegmentationDropDown.Value);
             includeKMeans = selectedSegmentation == "K-means" || selectedSegmentation == "Both";
             selectedK = str2double(app.KDropDown.Value);
-            modelPath = fullfile(app.Config.modelDir, sprintf("kmeans_rbc_k%d.mat", selectedK));
-
-            if includeKMeans && ~isfile(modelPath)
-                uialert(app.UIFigure, ...
-                    sprintf("Missing K-means model for k=%d:\n%s\n\nRun notebooks/evaluations.mlx first.", selectedK, modelPath), ...
-                    "Missing K-means model");
-                return;
-            end
 
             app.setBusy(true, "Running segmentation and RBC counting...");
             drawnow;
@@ -93,11 +85,7 @@ classdef RBCApp < matlab.apps.AppBase
                 app.Config.groundTruth.rbcCount = lookupRBCGroundTruth(app.ImagePath, app.Config.metadataPath);
                 app.Config.ml.kmeans.enabled = includeKMeans;
                 app.Config.ml.kmeans.k = selectedK;
-                if includeKMeans
-                    app.Config.ml.kmeans.modelPath = modelPath;
-                else
-                    app.Config.ml.kmeans.modelPath = "";
-                end
+                app.Config.ml.kmeans.modelPath = "";
 
                 app.Result = countRBCPipeline(app.ImagePath, app.Config);
                 app.Summary = struct2table(app.Result.counts);

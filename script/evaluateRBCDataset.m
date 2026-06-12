@@ -96,9 +96,14 @@ switch true
         counts = countRBCMask(mask, rgb, config);
 
     case startsWith(segmentationName, "kmeans")
-        prediction = predictKMeansRBC(rgb, config, model);
+        %#ok<NASGU> model is kept in the signature for older callers.
+        prediction = segmentRBCKMeans(rgb, config);
         mask = prediction.maskFinal;
-        scoreMap = prediction.scoreMap;
+        if isfield(prediction, "scoreMap")
+            scoreMap = prediction.scoreMap;
+        else
+            scoreMap = double(mask);
+        end
         counts = countRBCMask(mask, rgb, config);
 
     otherwise

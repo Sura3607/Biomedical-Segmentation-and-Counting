@@ -21,10 +21,11 @@ end
 row = row(1, :);
 
 rgb = imread(datasetImagePath(row, config));
-annotationPath = datasetAnnotationPath(row, config);
-[~, gtCount] = readRBCAnnotationMask(annotationPath, [size(rgb, 1), size(rgb, 2)]);
-if ~isnan(row.groundTruth)
-    gtCount = row.groundTruth;
+gtCount = row.groundTruth;
+if isnan(gtCount)
+    gtLabel = "GT=n/a";
+else
+    gtLabel = sprintf("GT=%d", gtCount);
 end
 
 [featureRaw, ~] = buildKMeansPixelFeatures(rgb, config);
@@ -41,25 +42,22 @@ tiledlayout(fig, 2, 2, "Padding", "compact", "TileSpacing", "compact");
 
 for i = 1:numel(candidateK)
     k = candidateK(i);
-    modelPath = fullfile(config.modelDir, sprintf("kmeans_rbc_k%d.mat", k));
-    if ~isfile(modelPath)
-        error("K-means model file not found: %s", modelPath);
-    end
+    plotConfig = config;
+    plotConfig.ml.kmeans.k = k;
+    plotConfig.ml.kmeans.modelPath = "";
+    prediction = segmentRBCKMeans(rgb, plotConfig);
 
-    data = load(modelPath, "model");
-    model = data.model;
-    featureNorm = (featureRaw - model.featureMean) ./ model.featureStd;
+    featureNorm = (featureRaw - prediction.featureMean) ./ prediction.featureStd;
     featureNorm(~isfinite(featureNorm)) = 0;
-    clusterId = assignKMeansCentroids(featureNorm, model.centroids);
+    clusterId = prediction.clusterMap(:);
 
     sampleFeatures = featureNorm(sampleIdx, :);
     sampleClusters = clusterId(sampleIdx);
-    [projected, centroidProjected] = projectToTwoDimensions(sampleFeatures, model.centroids);
+    [projected, centroidProjected] = projectToTwoDimensions(sampleFeatures, prediction.centroids);
 
     nexttile;
-    wbcCluster = highestWbcCluster(model);
-    plotScatterForK(projected, sampleClusters, model, centroidProjected, wbcCluster);
-    title(sprintf("k=%d clusters + centroids | WBC-high=C%d | GT=%d", k, wbcCluster, gtCount), ...
+    plotScatterForK(projected, sampleClusters, prediction, centroidProjected);
+    title(sprintf("k=%d color-score clusters | %s", k, char(gtLabel)), ...
         "Color", "black", "Interpreter", "none");
 end
 
@@ -91,11 +89,11 @@ end
 centroidProjected = (centroids - featureMean) * coeff(:, 1:2);
 end
 
-function plotScatterForK(projected, clusterId, model, centroidProjected, wbcCluster)
-colors = clusterColors(model, wbcCluster);
+function plotScatterForK(projected, clusterId, prediction, centroidProjected)
+colors = clusterColors(prediction);
 hold on;
 
-for clusterIdx = 1:model.k
+for clusterIdx = 1:prediction.k
     mask = clusterId == clusterIdx;
     scatter(projected(mask, 1), projected(mask, 2), 7, ...
         "MarkerFaceColor", colors(clusterIdx, :), ...
@@ -120,13 +118,13 @@ grid on;
 box on;
 xlabel("PC1");
 ylabel("PC2");
-lgd = legend(clusterLegendLabels(model, wbcCluster), "Location", "bestoutside", "Interpreter", "none");
+lgd = legend(clusterLegendLabels(prediction), "Location", "bestoutside", "Interpreter", "none");
 lgd.Color = "white";
 lgd.TextColor = "black";
 lgd.EdgeColor = [0.8 0.8 0.8];
 end
 
-function colors = clusterColors(model, wbcCluster)
+function colors = clusterColors(prediction)
 base = [
     0.85 0.12 0.12
     0.10 0.62 0.22
@@ -134,47 +132,39 @@ base = [
     0.55 0.18 0.78
     0.35 0.35 0.35
 ];
-if model.k > size(base, 1)
-    base = lines(model.k);
+if prediction.k > size(base, 1)
+    base = lines(prediction.k);
 end
 colors = base;
-colors(wbcCluster, :) = [0.10 0.32 0.90];
+if ~isempty(prediction.wbcClusters)
+    colors(prediction.wbcClusters, :) = repmat([0.10 0.32 0.90], numel(prediction.wbcClusters), 1);
+end
+if ~isempty(prediction.rbcClusters)
+    colors(prediction.rbcClusters, :) = repmat([0.85 0.12 0.12], numel(prediction.rbcClusters), 1);
+end
 end
 
-function labels = clusterLegendLabels(model, wbcCluster)
-labels = strings(1, model.k);
-for clusterIdx = 1:model.k
-    className = clusterClass(model, clusterIdx);
-    rbcProb = model.clusterRbcProbability(clusterIdx);
-    if isfield(model, "clusterWbcProbability") && ~isempty(model.clusterWbcProbability)
-        wbcProb = model.clusterWbcProbability(clusterIdx);
-    else
-        wbcProb = 0;
-    end
+function labels = clusterLegendLabels(prediction)
+labels = strings(1, prediction.k);
+for clusterIdx = 1:prediction.k
+    className = clusterClass(prediction.clusterStats, clusterIdx);
+    row = prediction.clusterStats(prediction.clusterStats.Cluster == clusterIdx, :);
+    rbcScore = row.RBCScore(1);
+    wbcScore = row.WBCScore(1);
     suffix = "";
-    if clusterIdx == wbcCluster
-        suffix = " | WBC max";
+    if any(prediction.wbcClusters == clusterIdx)
+        suffix = " | WBC max-score";
     end
-    labels(clusterIdx) = sprintf("C%d %s | RBC %.2f WBC %.2f%s", ...
-        clusterIdx, upper(className), rbcProb, wbcProb, suffix);
+    labels(clusterIdx) = sprintf("C%d %s | RBCscore %.2f WBCscore %.2f%s", ...
+        clusterIdx, upper(className), rbcScore, wbcScore, suffix);
 end
 end
 
-function clusterIdx = highestWbcCluster(model)
-if isfield(model, "clusterWbcProbability") && ~isempty(model.clusterWbcProbability)
-    [~, clusterIdx] = max(model.clusterWbcProbability);
-else
-    clusterIdx = 1;
-end
-end
-
-function className = clusterClass(model, clusterIdx)
+function className = clusterClass(clusterStats, clusterIdx)
 className = "other";
-if isfield(model, "clusterStats") && any(model.clusterStats.Cluster == clusterIdx)
-    row = model.clusterStats(model.clusterStats.Cluster == clusterIdx, :);
-    if ismember("AssignedClass", string(row.Properties.VariableNames))
-        className = string(row.AssignedClass(1));
-    end
+if any(clusterStats.Cluster == clusterIdx)
+    row = clusterStats(clusterStats.Cluster == clusterIdx, :);
+    className = string(row.AssignedClass(1));
 end
 end
 

@@ -20,11 +20,12 @@ end
 row = row(1, :);
 
 imagePath = datasetImagePath(row, config);
-annotationPath = datasetAnnotationPath(row, config);
 rgb = imread(imagePath);
-[~, gtCount] = readRBCAnnotationMask(annotationPath, [size(rgb, 1), size(rgb, 2)]);
 if ~isnan(row.groundTruth)
     gtCount = row.groundTruth;
+else
+    annotationPath = datasetAnnotationPath(row, config);
+    [~, gtCount] = readRBCAnnotationMask(annotationPath, [size(rgb, 1), size(rgb, 2)]);
 end
 
 channelInfo = selectBestChannels(rgb, config);
@@ -32,8 +33,10 @@ wbcAlgorithm = segmentWBC(rgb, channelInfo.wbc, config);
 rbcAlgorithm = segmentRBC(rgb, channelInfo.rbc, wbcAlgorithm.maskForExclusion, config);
 algorithmCounts = countRBCMask(rbcAlgorithm.maskFinal, rgb, config);
 
-best = load(fullfile(config.modelDir, "kmeans_rbc_best.mat"), "model");
-kmeansPrediction = predictKMeansRBC(rgb, config, best.model);
+kmeansConfig = config;
+kmeansConfig.ml.kmeans.k = selectedKMeansK(config);
+kmeansConfig.ml.kmeans.modelPath = "";
+kmeansPrediction = segmentRBCKMeans(rgb, kmeansConfig);
 kmeansCounts = countRBCMask(kmeansPrediction.maskFinal, rgb, config);
 
 reportDir = fullfile(config.outputDir, "report_figures");
@@ -44,17 +47,17 @@ end
 exportOneComposite(reportDir, "algorithm", rgb, wbcAlgorithm.mask, ...
     rbcAlgorithm.maskFinal, algorithmCounts, gtCount, row.id);
 exportOneComposite(reportDir, "kmeans", rgb, kmeansPrediction.maskWBC, ...
-    kmeansPrediction.maskFinal, kmeansCounts, gtCount, row.id, best.model.k);
+    kmeansPrediction.maskFinal, kmeansCounts, gtCount, row.id, kmeansConfig.ml.kmeans.k);
 exportComparisonComposite(reportDir, rgb, wbcAlgorithm.mask, rbcAlgorithm.maskFinal, ...
     kmeansPrediction.maskWBC, kmeansPrediction.maskFinal, algorithmCounts, kmeansCounts, ...
-    gtCount, row.id, best.model.k);
+    gtCount, row.id, kmeansConfig.ml.kmeans.k);
 
 end
 
 function imageId = selectBestKMeansSample(config)
 metricsPath = fullfile(config.outputDir, "metrics", "test_per_image_metrics.csv");
 if ~isfile(metricsPath)
-    error("Metrics file not found. Run notebooks/evaluations.mlx first: %s", metricsPath);
+    error("Metrics file not found. Run notebooks/run_evaluations.m first: %s", metricsPath);
 end
 
 rows = readtable(metricsPath, "TextType", "string");
@@ -64,16 +67,18 @@ imageId = rows.imageId(1);
 
 try
     metadata = loadRBCMetadata(config.metadataPath);
-    data = load(fullfile(config.modelDir, "kmeans_rbc_best.mat"), "model");
-    imageId = selectBestWbcAwareSample(rows, metadata, config, data.model);
+    imageId = selectBestWbcAwareSample(rows, metadata, config, selectedKMeansK(config));
 catch
     imageId = rows.imageId(1);
 end
 end
 
-function imageId = selectBestWbcAwareSample(rows, metadata, config, model)
+function imageId = selectBestWbcAwareSample(rows, metadata, config, k)
 fallback = rows.imageId(1);
 bestAnyWbc = "";
+kmeansConfig = config;
+kmeansConfig.ml.kmeans.k = k;
+kmeansConfig.ml.kmeans.modelPath = "";
 
 for i = 1:height(rows)
     row = metadata(metadata.id == rows.imageId(i), :);
@@ -81,8 +86,8 @@ for i = 1:height(rows)
         continue;
     end
 
-    rgb = imread(datasetImagePath(row(1, :), config));
-    prediction = predictKMeansRBC(rgb, config, model);
+    rgb = imread(datasetImagePath(row(1, :), kmeansConfig));
+    prediction = segmentRBCKMeans(rgb, kmeansConfig);
     wbcRatio = nnz(prediction.maskWBC) / numel(prediction.maskWBC);
 
     if wbcRatio >= 0.005 && bestAnyWbc == ""
@@ -99,6 +104,24 @@ if bestAnyWbc ~= ""
     imageId = bestAnyWbc;
 else
     imageId = fallback;
+end
+end
+
+function k = selectedKMeansK(config)
+k = config.ml.kmeans.k;
+selectionPath = fullfile(config.outputDir, "metrics", "validation_k_selection.csv");
+if ~isfile(selectionPath)
+    return;
+end
+
+rows = readtable(selectionPath, "TextType", "string");
+if isempty(rows) || ~ismember("isSelected", string(rows.Properties.VariableNames))
+    return;
+end
+
+selectedRows = rows(logical(rows.isSelected), :);
+if ~isempty(selectedRows)
+    k = selectedRows.k(1);
 end
 end
 

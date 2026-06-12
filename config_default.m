@@ -50,8 +50,8 @@ config.counting.watershedHMin = 1.0;
 
 % K-means pixel-level segmentation branch.
 % This is the ML/non-deep-learning segmentation baseline. It clusters pixel
-% features, maps clusters to RBC/WBC/background, then sends the RBC mask to
-% the same counting methods used by the algorithm branch.
+% features on each image, maps clusters to RBC/WBC/background by color scores,
+% then sends the RBC mask to the same counting methods used by the algorithm branch.
 config.ml.kmeans.enabled = true;
 config.ml.kmeans.k = 3;                     % selected by validation metrics.
 config.ml.kmeans.maxSamplePixels = 60000;   % sample pixels for centroids; 0 means all.
@@ -67,7 +67,7 @@ config.ml.kmeans.training.maxPixelsPerImage = 5000;
 config.ml.kmeans.training.candidateK = [2 3 4 5];
 config.ml.kmeans.training.selectionCountingMethod = "watershed";
 config.ml.kmeans.training.countMaeTieTolerance = 0.1;
-config.ml.kmeans.modelPath = "";
+config.ml.kmeans.modelPath = "";            % legacy; color-score K-means ignores persisted models.
 
 % Evaluation artifacts.
 config.evaluation.saveTestOverlays = false;

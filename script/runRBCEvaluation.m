@@ -1,5 +1,5 @@
 function results = runRBCEvaluation(config)
-%RUNRBCEVALUATION Train/select K-means and evaluate algorithm vs K-means.
+%RUNRBCEVALUATION Select color-theory K-means and evaluate RBC counting.
 
 if nargin < 1 || isempty(config)
     config = config_default();
@@ -10,7 +10,6 @@ ensureEvaluationFolders(config);
 metadata = loadRBCMetadata(config.metadataPath);
 validateDatasetSplits(metadata, config);
 
-trainRows = metadata(metadata.split == "train", :);
 valRows = metadata(metadata.split == "val", :);
 testRows = metadata(metadata.split == "test", :);
 candidateK = config.ml.kmeans.training.candidateK;
@@ -19,37 +18,19 @@ selectionRecords = struct([]);
 
 for i = 1:numel(candidateK)
     k = candidateK(i);
-    modelPath = fullfile(config.modelDir, sprintf("kmeans_rbc_k%d.mat", k));
     modelConfig = config;
     modelConfig.ml.kmeans.k = k;
+    modelConfig.ml.kmeans.modelPath = "";
 
-    if isfile(modelPath)
-        loaded = load(modelPath, "model");
-        model = loaded.model;
-        if ~isfield(model, "clusterWbcProbability")
-            model = trainKMeansRBCModel(trainRows, modelConfig, k, modelPath);
-        end
-    else
-        model = trainKMeansRBCModel(trainRows, modelConfig, k, modelPath);
-    end
-
-    model.rbcThreshold = max(model.clusterRbcProbability);
-    if isfield(model, "clusterWbcProbability")
-        model.wbcThreshold = max(model.clusterWbcProbability);
-    end
-    save(modelPath, "model");
-
-    valRowsResult = evaluateRBCDataset(valRows, modelConfig, "kmeans_k" + string(k), model, "");
+    valRowsResult = evaluateRBCDataset(valRows, modelConfig, "kmeans_k" + string(k), [], "");
     valSummary = aggregateEvaluationMetrics(valRowsResult);
     selectionRow = selectWatershedSummary(valSummary);
 
-    model.validationMetrics = selectionRow;
-    save(modelPath, "model");
-
     record = struct();
     record.k = k;
-    record.threshold = model.rbcThreshold;
-    record.modelPath = string(modelPath);
+    record.segmentationMethod = "color_theory_kmeans";
+    record.threshold = NaN;
+    record.modelPath = "";
     record.validationPixelF1 = selectionRow.pixelF1;
     record.validationPixelAUC = selectionRow.pixelAUC;
     record.validationCountMAE = selectionRow.countMAE;
@@ -70,15 +51,7 @@ kSelection = sortrows(kSelection, {'isSelected', 'validationCountMAE'}, {'descen
 
 bestConfig = config;
 bestConfig.ml.kmeans.k = bestK;
-bestRows = [trainRows; valRows];
-bestModelPath = fullfile(config.modelDir, "kmeans_rbc_best.mat");
-bestModel = trainKMeansRBCModel(bestRows, bestConfig, bestK, bestModelPath);
-bestModel.rbcThreshold = max(bestModel.clusterRbcProbability);
-if isfield(bestModel, "clusterWbcProbability")
-    bestModel.wbcThreshold = max(bestModel.clusterWbcProbability);
-end
-model = bestModel; %#ok<NASGU>
-save(bestModelPath, "model");
+bestConfig.ml.kmeans.modelPath = "";
 
 if isfield(config, "evaluation") && isfield(config.evaluation, "saveTestOverlays") && config.evaluation.saveTestOverlays
     overlayDir = fullfile(config.outputDir, "overlays", "test");
@@ -86,7 +59,7 @@ else
     overlayDir = "";
 end
 algorithmRows = evaluateRBCDataset(testRows, config, "algorithm", [], overlayDir);
-kmeansRows = evaluateRBCDataset(testRows, bestConfig, "kmeans", bestModel, overlayDir);
+kmeansRows = evaluateRBCDataset(testRows, bestConfig, "kmeans", [], overlayDir);
 testRowsAll = [algorithmRows; kmeansRows];
 testSummary = aggregateEvaluationMetrics(testRowsAll);
 
@@ -101,7 +74,8 @@ results = struct();
 results.metadata = metadata;
 results.kSelection = kSelection;
 results.bestK = bestK;
-results.bestModelPath = string(bestModelPath);
+results.kmeansMethod = "color_theory_kmeans";
+results.bestModelPath = "";
 results.testRows = testRowsAll;
 results.testSummary = testSummary;
 

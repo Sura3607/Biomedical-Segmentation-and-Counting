@@ -24,37 +24,32 @@ The app supports:
 
 - segmentation choice: algorithm, K-means, or both
 - counting method choice: connected components, watershed, or area estimate
-- K-means model choice: `k = 2, 3, 4, 5`
+- K-means cluster count: `k = 2, 3, 4, 5`
 
-K-means mode loads persisted models from `models/`. Run the evaluation notebook
-first if model files are missing.
+K-means mode clusters the current image and assigns clusters to RBC/WBC/background
+with color-feature scores. It does not load persisted annotation-trained models.
 
 ## Run Evaluation
 
-Open and run:
-
-```text
-notebooks/evaluations.mlx
-```
-
-If your MATLAB installation cannot open the Live Script file directly, run the
-same source as a script:
+Open MATLAB at the repository root and run:
 
 ```matlab
-run("notebooks/evaluations.m")
+run("notebooks/run_evaluations.m")
 ```
 
 The evaluation workflow:
 
 1. Loads `data/metadata_coutingrbc.json`.
-2. Trains K-means models for `k = 2, 3, 4, 5` on `data/train`.
+2. Runs color-score K-means for `k = 2, 3, 4, 5` on `data/val`.
 3. Selects the best `k` on `data/val` by watershed count MAE. If count MAE is
    effectively tied, the higher pixel F1 wins.
-4. Retrains the selected `k` on train+val.
-5. Evaluates algorithm and best K-means on `data/test`.
+4. Evaluates algorithm and best K-means on `data/test`.
+5. Exports validation/test plots plus K-means cluster/scatter diagnostics and
+   report figures.
 
 Ground-truth masks for pixel metrics are approximated by rasterizing RBC
-annotation rectangles.
+annotation rectangles. K-means segmentation itself does not use those annotation
+masks.
 
 ## Outputs
 
@@ -70,18 +65,13 @@ outputs/
 |   |-- validation_k_selection.png
 |   |-- test_pixel_f1_by_method.png
 |   |-- test_count_mae_by_method.png
-|   `-- test_auc_by_method.png
-```
-
-K-means models are saved to:
-
-```text
-models/
-|-- kmeans_rbc_k2.mat
-|-- kmeans_rbc_k3.mat
-|-- kmeans_rbc_k4.mat
-|-- kmeans_rbc_k5.mat
-`-- kmeans_rbc_best.mat
+|   |-- test_auc_by_method.png
+|   |-- *_kmeans_cluster_maps.png
+|   `-- *_kmeans_pca_clusters_centroids_all_k.png
+`-- report_figures/
+    |-- *_algorithm_report.png
+    |-- *_kmeans_report.png
+    `-- *_comparison_report.png
 ```
 
 ## Metrics

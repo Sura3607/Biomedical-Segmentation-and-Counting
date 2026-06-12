@@ -21,11 +21,6 @@ end
 row = row(1, :);
 
 rgb = imread(datasetImagePath(row, config));
-annotationPath = datasetAnnotationPath(row, config);
-[~, gtCount] = readRBCAnnotationMask(annotationPath, [size(rgb, 1), size(rgb, 2)]);
-if ~isnan(row.groundTruth)
-    gtCount = row.groundTruth;
-end
 
 plotsDir = fullfile(config.outputDir, "plots");
 if ~isfolder(plotsDir)
@@ -38,13 +33,10 @@ tiledlayout(fig, 2, numel(candidateK), "Padding", "compact", "TileSpacing", "com
 
 for i = 1:numel(candidateK)
     k = candidateK(i);
-    modelPath = fullfile(config.modelDir, sprintf("kmeans_rbc_k%d.mat", k));
-    if ~isfile(modelPath)
-        error("K-means model file not found: %s", modelPath);
-    end
-
-    data = load(modelPath, "model");
-    prediction = predictKMeansRBC(rgb, config, data.model);
+    plotConfig = config;
+    plotConfig.ml.kmeans.k = k;
+    plotConfig.ml.kmeans.modelPath = "";
+    prediction = segmentRBCKMeans(rgb, plotConfig);
     counts = countRBCMask(prediction.maskFinal, rgb, config);
 
     nexttile(i);
@@ -53,8 +45,8 @@ for i = 1:numel(candidateK)
         "Color", "black", "Interpreter", "none");
 
     nexttile(numel(candidateK) + i);
-    plotClusterProbabilities(data.model);
-    title(sprintf("k=%d cluster class probability", k), ...
+    plotClusterScores(prediction.clusterStats);
+    title(sprintf("k=%d cluster color scores", k), ...
         "Color", "black", "Interpreter", "none");
 end
 
@@ -89,25 +81,32 @@ end
 img = im2uint8(img);
 end
 
-function plotClusterProbabilities(model)
-x = 1:model.k;
-rbc = double(model.clusterRbcProbability(:));
-if isfield(model, "clusterWbcProbability") && ~isempty(model.clusterWbcProbability)
-    wbc = double(model.clusterWbcProbability(:));
-else
-    wbc = zeros(model.k, 1);
-end
+function plotClusterScores(clusterStats)
+x = clusterStats.Cluster;
+rbc = normalizeScore(clusterStats.RBCScore);
+wbc = normalizeScore(clusterStats.WBCScore);
 
 b = bar(x, [rbc, wbc], "grouped");
 b(1).FaceColor = [0.85 0.12 0.12];
 b(2).FaceColor = [0.10 0.32 0.90];
 ylim([0 1]);
 xlabel("Cluster");
-ylabel("Probability");
+ylabel("Normalized score");
 lgd = legend(["RBC", "WBC"], "Location", "northoutside", "Orientation", "horizontal");
 lgd.Color = "white";
 lgd.TextColor = "black";
 grid on;
+end
+
+function out = normalizeScore(values)
+values = double(values(:));
+minValue = min(values);
+maxValue = max(values);
+if maxValue > minValue
+    out = (values - minValue) ./ (maxValue - minValue);
+else
+    out = zeros(size(values));
+end
 end
 
 function fig = createClusterFigure(position)

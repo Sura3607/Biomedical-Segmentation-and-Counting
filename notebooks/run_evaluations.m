@@ -1,7 +1,7 @@
-%% RBC segmentation and counting evaluation
-% This notebook evaluates color-theory K-means without using annotation masks
-% for training or cluster labeling. Annotation rectangles are used only as
-% ground truth for validation/test metrics.
+%% RBC segmentation and counting evaluation artifacts
+% Evaluates color-theory K-means without using annotation masks for training
+% or cluster labeling. Annotation rectangles are used only as ground truth
+% for validation/test metrics.
 
 currentFolder = pwd;
 [~, currentFolderName] = fileparts(currentFolder);

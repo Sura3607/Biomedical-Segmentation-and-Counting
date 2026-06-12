@@ -20,11 +20,6 @@ if exist("kmeans", "file") ~= 2
     return;
 end
 
-if hasPersistedModel(config)
-    out = predictKMeansRBC(rgb, config);
-    return;
-end
-
 [featureRaw, featureNames] = buildKMeansPixelFeatures(rgb, config);
 
 sampleIdx = selectSampleRows(size(featureRaw, 1), config);
@@ -48,6 +43,8 @@ clusterMap = reshape(clusterId, imgHeight, imgWidth);
 
 clusterStats = summarizeClusters(clusterId, featureRaw, featureNames, k);
 [classInfo, clusterStats] = classifyClusters(clusterStats, config);
+rbcScoreByCluster = rescaleColumn(clusterStats.RBCScore);
+scoreMap = reshape(rbcScoreByCluster(clusterId), imgHeight, imgWidth);
 
 maskWBC = ismember(clusterMap, classInfo.wbcClusters);
 maskRBC = ismember(clusterMap, classInfo.rbcClusters);
@@ -57,12 +54,16 @@ maskRBC = cleanupBinaryMask(maskRBC, ...
     config.rbc.openRadius, ...
     config.rbc.closeRadius, ...
     config.rbc.fillHoles);
+maskRBC(maskWBC) = false;
 
 out = struct();
+out.k = k;
 out.maskFinal = maskRBC;
 out.maskWBC = maskWBC;
 out.clusterMap = clusterMap;
+out.scoreMap = scoreMap;
 out.clusterStats = clusterStats;
+out.centroids = centroids;
 out.featureNames = featureNames;
 out.featureMean = mu;
 out.featureStd = sigma;
@@ -72,80 +73,6 @@ out.backgroundClusters = classInfo.backgroundClusters;
 out.finalMethod = "kmeans_pixel_features";
 out.notes = "K-means pixel segmentation. RBC/WBC/background clusters are selected by color-feature scores.";
 
-end
-
-function tf = hasPersistedModel(config)
-tf = false;
-if ~isfield(config, "ml") || ~isfield(config.ml, "kmeans")
-    return;
-end
-
-if isfield(config.ml.kmeans, "model") && ~isempty(config.ml.kmeans.model)
-    tf = true;
-    return;
-end
-
-if isfield(config.ml.kmeans, "modelPath") && strlength(string(config.ml.kmeans.modelPath)) > 0
-    tf = isfile(char(config.ml.kmeans.modelPath));
-end
-end
-
-function [features, featureNames] = buildPixelFeatures(rgb, config)
-[imgHeight, imgWidth, ~] = size(rgb);
-
-hsvImg = rgb2hsv(rgb);
-labImg = rgb2lab(rgb);
-
-R = rgb(:, :, 1);
-G = rgb(:, :, 2);
-B = rgb(:, :, 3);
-S = hsvImg(:, :, 2);
-V = hsvImg(:, :, 3);
-L = labImg(:, :, 1);
-A = labImg(:, :, 2);
-BLab = labImg(:, :, 3);
-
-sumRGB = R + G + B + eps;
-rNorm = R ./ sumRGB;
-gNorm = G ./ sumRGB;
-bNorm = B ./ sumRGB;
-BminusR = B - R;
-RminusG = R - G;
-
-[xGrid, yGrid] = meshgrid(0:max(imgWidth - 1, 0), 0:max(imgHeight - 1, 0));
-xNorm = xGrid ./ max(imgWidth - 1, 1);
-yNorm = yGrid ./ max(imgHeight - 1, 1);
-spatialWeight = config.ml.kmeans.spatialWeight;
-
-features = [
-    L(:), ...
-    A(:), ...
-    BLab(:), ...
-    S(:), ...
-    V(:), ...
-    rNorm(:), ...
-    gNorm(:), ...
-    bNorm(:), ...
-    BminusR(:), ...
-    RminusG(:), ...
-    spatialWeight * xNorm(:), ...
-    spatialWeight * yNorm(:)
-];
-
-featureNames = [
-    "L", ...
-    "A", ...
-    "BLab", ...
-    "S", ...
-    "V", ...
-    "rNorm", ...
-    "gNorm", ...
-    "bNorm", ...
-    "BminusR", ...
-    "RminusG", ...
-    "X", ...
-    "Y"
-];
 end
 
 function sampleIdx = selectSampleRows(rowCount, config)
@@ -165,26 +92,6 @@ sigma = std(sampleFeatures, 0, 1);
 sigma(sigma == 0 | ~isfinite(sigma)) = 1;
 featureNorm = (featureRaw - mu) ./ sigma;
 featureNorm(~isfinite(featureNorm)) = 0;
-end
-
-function clusterId = assignToCentroids(features, centroids)
-rowCount = size(features, 1);
-k = size(centroids, 1);
-clusterId = zeros(rowCount, 1);
-chunkSize = 50000;
-
-for startIdx = 1:chunkSize:rowCount
-    endIdx = min(startIdx + chunkSize - 1, rowCount);
-    block = features(startIdx:endIdx, :);
-    distances = zeros(size(block, 1), k);
-
-    for clusterIdx = 1:k
-        diff = block - centroids(clusterIdx, :);
-        distances(:, clusterIdx) = sum(diff .^ 2, 2);
-    end
-
-    [~, clusterId(startIdx:endIdx)] = min(distances, [], 2);
-end
 end
 
 function clusterStats = summarizeClusters(clusterId, featureRaw, featureNames, k)
@@ -287,10 +194,13 @@ end
 
 function out = emptyKMeansSegmentation(imgHeight, imgWidth, notes)
 out = struct();
+out.k = 0;
 out.maskFinal = false(imgHeight, imgWidth);
 out.maskWBC = false(imgHeight, imgWidth);
 out.clusterMap = zeros(imgHeight, imgWidth);
+out.scoreMap = zeros(imgHeight, imgWidth);
 out.clusterStats = table();
+out.centroids = [];
 out.featureNames = strings(0);
 out.featureMean = [];
 out.featureStd = [];
