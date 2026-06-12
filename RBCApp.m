@@ -11,10 +11,15 @@ classdef RBCApp < matlab.apps.AppBase
         KDropDown matlab.ui.control.DropDown
         ImagePathLabel matlab.ui.control.Label
         StatusLabel matlab.ui.control.Label
+        ReportTitleLabel matlab.ui.control.Label
         OriginalAxes matlab.ui.control.UIAxes
-        AlgorithmAxes matlab.ui.control.UIAxes
-        KMeansAxes matlab.ui.control.UIAxes
-        CountAxes matlab.ui.control.UIAxes
+        RBCMaskAxes matlab.ui.control.UIAxes
+        WBCMaskAxes matlab.ui.control.UIAxes
+        CombinedMaskAxes matlab.ui.control.UIAxes
+        RBCOverlayAxes matlab.ui.control.UIAxes
+        ConnectedComponentsAxes matlab.ui.control.UIAxes
+        WatershedAxes matlab.ui.control.UIAxes
+        AreaEstimateAxes matlab.ui.control.UIAxes
         ResultsTable matlab.ui.control.Table
     end
 
@@ -92,14 +97,12 @@ classdef RBCApp < matlab.apps.AppBase
                 app.FilteredSummary = app.filteredSummary();
                 app.ResultsTable.Data = app.FilteredSummary;
 
-                app.showImage(app.OriginalAxes, app.Result.original, "Original image");
-                app.showSelectedSegmentationOverlays(selectedSegmentation);
-                app.showSelectedCountOverlay();
+                app.showReportView(selectedSegmentation, selectedK);
 
                 app.StatusLabel.Text = app.statusText();
             catch err
                 app.StatusLabel.Text = "Pipeline failed.";
-                uialert(app.UIFigure, err.message, "RBC pipeline error");
+                uialert(app.UIFigure, app.formatErrorMessage(err), "RBC pipeline error");
             end
 
             app.setBusy(false, app.StatusLabel.Text);
@@ -131,6 +134,17 @@ classdef RBCApp < matlab.apps.AppBase
             app.StatusLabel.Text = "Exported selected results to: " + string(app.Config.outputDir);
         end
 
+        function refreshSelectedResults(app)
+            if isempty(app.Result) || ~isfield(app.Result, "counts")
+                return;
+            end
+
+            app.FilteredSummary = app.filteredSummary();
+            app.ResultsTable.Data = app.FilteredSummary;
+            app.showReportView(string(app.SegmentationDropDown.Value), str2double(app.KDropDown.Value));
+            app.StatusLabel.Text = app.statusText();
+        end
+
         function summary = filteredSummary(app)
             summary = app.Summary;
             if isempty(summary) || height(summary) == 0
@@ -153,51 +167,6 @@ classdef RBCApp < matlab.apps.AppBase
             summary = summary(keepSegmentation & keepCounting, :);
         end
 
-        function showSelectedSegmentationOverlays(app, selectedSegmentation)
-            if selectedSegmentation == "Algorithm" || selectedSegmentation == "Both"
-                app.showImage(app.AlgorithmAxes, app.Result.overlays.algorithmMask, "Algorithm RBC overlay");
-            else
-                cla(app.AlgorithmAxes);
-                title(app.AlgorithmAxes, "Algorithm overlay");
-            end
-
-            if selectedSegmentation == "K-means" || selectedSegmentation == "Both"
-                app.showImage(app.KMeansAxes, app.Result.overlays.kmeansMask, "K-means RBC overlay");
-            else
-                cla(app.KMeansAxes);
-                title(app.KMeansAxes, "K-means overlay");
-            end
-        end
-
-        function showSelectedCountOverlay(app)
-            if ~isfield(app.Result, "overlays") || ~isfield(app.Result.overlays, "counts")
-                cla(app.CountAxes);
-                title(app.CountAxes, "Count overlay");
-                return;
-            end
-
-            selectedSegmentation = string(app.SegmentationDropDown.Value);
-            if selectedSegmentation == "Both"
-                if any(app.FilteredSummary.segmentation == "kmeans")
-                    selectedSegmentation = "kmeans";
-                else
-                    selectedSegmentation = "algorithm";
-                end
-            elseif selectedSegmentation == "K-means"
-                selectedSegmentation = "kmeans";
-            else
-                selectedSegmentation = "algorithm";
-            end
-
-            fieldName = char(selectedSegmentation + "_" + app.selectedCountingField());
-            if isfield(app.Result.overlays.counts, fieldName)
-                app.showImage(app.CountAxes, app.Result.overlays.counts.(fieldName), strrep(fieldName, "_", " "));
-            else
-                cla(app.CountAxes);
-                title(app.CountAxes, "Count overlay");
-            end
-        end
-
         function text = statusText(app)
             if isempty(app.FilteredSummary) || height(app.FilteredSummary) == 0
                 text = "Done. No selected result rows.";
@@ -208,6 +177,78 @@ classdef RBCApp < matlab.apps.AppBase
             text = sprintf("Done. %s = %d RBC.", char(row.method), row.count);
             if height(app.FilteredSummary) > 1
                 text = sprintf("Done. Showing %d selected result rows.", height(app.FilteredSummary));
+            end
+        end
+
+        function showReportView(app, selectedSegmentation, selectedK)
+            branch = app.reportBranch(selectedSegmentation);
+            [rbcMask, wbcMask, rbcOverlay, counts, methodLabel] = app.reportData(branch);
+
+            countCC = counts.connectedComponents.count;
+            countWatershed = counts.watershed.count;
+            countArea = counts.areaEstimate.count;
+            [~, imageName, imageExt] = fileparts(app.ImagePath);
+            imageId = [imageName imageExt];
+
+            if branch == "kmeans"
+                titleText = sprintf("%s - KMEANS", imageId);
+            else
+                titleText = sprintf("%s - ALGORITHM", imageId);
+            end
+
+            app.ReportTitleLabel.Text = titleText;
+            app.showImage(app.OriginalAxes, app.Result.original, "Original");
+            app.showImage(app.RBCMaskAxes, rbcMask, "Predicted RBC mask");
+            app.showImage(app.WBCMaskAxes, wbcMask, "Predicted WBC mask");
+            app.showImage(app.CombinedMaskAxes, app.classMaskImage(rbcMask, wbcMask), "Combined mask");
+            app.showImage(app.RBCOverlayAxes, rbcOverlay, "RBC overlay");
+            app.showImage(app.ConnectedComponentsAxes, counts.connectedComponents.overlay, ...
+                sprintf("Connected components | Count=%d", countCC));
+            app.showImage(app.WatershedAxes, counts.watershed.overlay, ...
+                sprintf("Watershed | Count=%d", countWatershed));
+            app.showImage(app.AreaEstimateAxes, counts.areaEstimate.overlay, ...
+                sprintf("Area estimate | Count=%d", countArea));
+
+            app.StatusLabel.Text = sprintf("Done. Showing %s report view.", methodLabel);
+        end
+
+        function branch = reportBranch(~, selectedSegmentation)
+            if selectedSegmentation == "Algorithm"
+                branch = "algorithm";
+            else
+                branch = "kmeans";
+            end
+        end
+
+        function [rbcMask, wbcMask, rbcOverlay, counts, methodLabel] = reportData(app, branch)
+            if branch == "kmeans"
+                rbcMask = app.Result.masks.rbcKMeans;
+                wbcMask = app.Result.masks.wbcKMeans;
+                rbcOverlay = app.Result.overlays.kmeansMask;
+                counts = app.Result.countDetails.kmeans;
+                methodLabel = "K-means";
+            else
+                rbcMask = app.Result.masks.rbcAlgorithm;
+                wbcMask = app.Result.masks.wbcAlgorithm;
+                rbcOverlay = app.Result.overlays.algorithmMask;
+                counts = app.Result.countDetails.algorithm;
+                methodLabel = "algorithm";
+            end
+        end
+
+        function maskImg = classMaskImage(~, rbcMask, wbcMask)
+            rbcMask = logical(rbcMask);
+            wbcMask = logical(ensureImageMaskSize(wbcMask, rbcMask, "WBC mask"));
+            maskImg = ones([size(rbcMask), 3], "uint8") * 255;
+            maskImg = paintLocalMask(maskImg, rbcMask, uint8([220 40 40]));
+            maskImg = paintLocalMask(maskImg, wbcMask, uint8([40 90 230]));
+
+            function img = paintLocalMask(img, mask, color)
+                for c = 1:3
+                    channel = img(:, :, c);
+                    channel(mask) = color(c);
+                    img(:, :, c) = channel;
+                end
             end
         end
 
@@ -240,9 +281,24 @@ classdef RBCApp < matlab.apps.AppBase
             ax.YTick = [];
         end
 
+        function message = formatErrorMessage(~, err)
+            message = string(err.message);
+            if ~isempty(err.stack)
+                topFrame = err.stack(1);
+                message = message + newline + newline + ...
+                    sprintf("At %s, line %d", topFrame.file, topFrame.line);
+            end
+        end
+
         function clearAxes(app)
-            axesList = [app.OriginalAxes, app.AlgorithmAxes, app.KMeansAxes, app.CountAxes];
-            titles = ["Original image", "Algorithm overlay", "K-means overlay", "Count overlay"];
+            axesList = [
+                app.OriginalAxes, app.RBCMaskAxes, app.WBCMaskAxes, app.CombinedMaskAxes, ...
+                app.RBCOverlayAxes, app.ConnectedComponentsAxes, app.WatershedAxes, app.AreaEstimateAxes
+            ];
+            titles = [
+                "Original", "Predicted RBC mask", "Predicted WBC mask", "Combined mask", ...
+                "RBC overlay", "Connected components", "Watershed", "Area estimate"
+            ];
 
             for i = 1:numel(axesList)
                 cla(axesList(i));
@@ -251,6 +307,7 @@ classdef RBCApp < matlab.apps.AppBase
                 axesList(i).YTick = [];
                 axesList(i).Box = "on";
             end
+            app.ReportTitleLabel.Text = "Run the pipeline to view the report.";
         end
 
         function setBusy(app, isBusy, message)
@@ -268,10 +325,10 @@ classdef RBCApp < matlab.apps.AppBase
         function createComponents(app)
             app.UIFigure = uifigure("Visible", "off");
             app.UIFigure.Name = "RBC Segmentation and Counting App";
-            app.UIFigure.Position = [100 100 1280 760];
+            app.UIFigure.Position = [60 60 1650 900];
 
             mainGrid = uigridlayout(app.UIFigure, [4 1]);
-            mainGrid.RowHeight = {76, 28, "1x", 210};
+            mainGrid.RowHeight = {76, 32, "1x", 150};
             mainGrid.ColumnWidth = {"1x"};
             mainGrid.Padding = [12 12 12 12];
             mainGrid.RowSpacing = 8;
@@ -308,6 +365,7 @@ classdef RBCApp < matlab.apps.AppBase
             app.SegmentationDropDown.Value = "Both";
             app.SegmentationDropDown.Layout.Row = 2;
             app.SegmentationDropDown.Layout.Column = 4;
+            app.SegmentationDropDown.ValueChangedFcn = @(~, ~) app.refreshSelectedResults();
 
             countingLabel = uilabel(toolbar, "Text", "Counting");
             countingLabel.Layout.Row = 1;
@@ -317,6 +375,7 @@ classdef RBCApp < matlab.apps.AppBase
             app.CountingDropDown.Value = "Watershed";
             app.CountingDropDown.Layout.Row = 2;
             app.CountingDropDown.Layout.Column = 5;
+            app.CountingDropDown.ValueChangedFcn = @(~, ~) app.refreshSelectedResults();
 
             kLabel = uilabel(toolbar, "Text", "K");
             kLabel.Layout.Row = 1;
@@ -337,27 +396,59 @@ classdef RBCApp < matlab.apps.AppBase
             app.StatusLabel.Layout.Row = 2;
             app.StatusLabel.Text = "Ready.";
 
-            imageGrid = uigridlayout(mainGrid, [2 2]);
-            imageGrid.Layout.Row = 3;
-            imageGrid.ColumnWidth = {"1x", "1x"};
+            reportPanel = uigridlayout(mainGrid, [2 1]);
+            reportPanel.Layout.Row = 3;
+            reportPanel.RowHeight = {32, "1x"};
+            reportPanel.ColumnWidth = {"1x"};
+            reportPanel.Padding = [0 0 0 0];
+            reportPanel.RowSpacing = 6;
+
+            app.ReportTitleLabel = uilabel(reportPanel);
+            app.ReportTitleLabel.Layout.Row = 1;
+            app.ReportTitleLabel.HorizontalAlignment = "center";
+            app.ReportTitleLabel.FontSize = 18;
+            app.ReportTitleLabel.FontWeight = "bold";
+            app.ReportTitleLabel.Text = "Run the pipeline to view the report.";
+
+            imageGrid = uigridlayout(reportPanel, [2 4]);
+            imageGrid.Layout.Row = 2;
+            imageGrid.ColumnWidth = {"1x", "1x", "1x", "1x"};
             imageGrid.RowHeight = {"1x", "1x"};
             imageGrid.Padding = [0 0 0 0];
+            imageGrid.ColumnSpacing = 10;
+            imageGrid.RowSpacing = 10;
 
             app.OriginalAxes = uiaxes(imageGrid);
             app.OriginalAxes.Layout.Row = 1;
             app.OriginalAxes.Layout.Column = 1;
 
-            app.AlgorithmAxes = uiaxes(imageGrid);
-            app.AlgorithmAxes.Layout.Row = 1;
-            app.AlgorithmAxes.Layout.Column = 2;
+            app.RBCMaskAxes = uiaxes(imageGrid);
+            app.RBCMaskAxes.Layout.Row = 1;
+            app.RBCMaskAxes.Layout.Column = 2;
 
-            app.KMeansAxes = uiaxes(imageGrid);
-            app.KMeansAxes.Layout.Row = 2;
-            app.KMeansAxes.Layout.Column = 1;
+            app.WBCMaskAxes = uiaxes(imageGrid);
+            app.WBCMaskAxes.Layout.Row = 1;
+            app.WBCMaskAxes.Layout.Column = 3;
 
-            app.CountAxes = uiaxes(imageGrid);
-            app.CountAxes.Layout.Row = 2;
-            app.CountAxes.Layout.Column = 2;
+            app.CombinedMaskAxes = uiaxes(imageGrid);
+            app.CombinedMaskAxes.Layout.Row = 1;
+            app.CombinedMaskAxes.Layout.Column = 4;
+
+            app.RBCOverlayAxes = uiaxes(imageGrid);
+            app.RBCOverlayAxes.Layout.Row = 2;
+            app.RBCOverlayAxes.Layout.Column = 1;
+
+            app.ConnectedComponentsAxes = uiaxes(imageGrid);
+            app.ConnectedComponentsAxes.Layout.Row = 2;
+            app.ConnectedComponentsAxes.Layout.Column = 2;
+
+            app.WatershedAxes = uiaxes(imageGrid);
+            app.WatershedAxes.Layout.Row = 2;
+            app.WatershedAxes.Layout.Column = 3;
+
+            app.AreaEstimateAxes = uiaxes(imageGrid);
+            app.AreaEstimateAxes.Layout.Row = 2;
+            app.AreaEstimateAxes.Layout.Column = 4;
 
             app.ResultsTable = uitable(mainGrid);
             app.ResultsTable.Layout.Row = 4;
