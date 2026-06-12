@@ -21,7 +21,7 @@ else
 end
 
 [~, name, ext] = fileparts(char(imagePathOrName));
-imageId = string(name + ext);
+imageId = string([name ext]);
 matchIdx = find(metadata.id == imageId, 1);
 
 if ~isempty(matchIdx)

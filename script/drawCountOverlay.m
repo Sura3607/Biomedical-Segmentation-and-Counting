@@ -2,6 +2,7 @@ function overlay = drawCountOverlay(rgb, labels, count, methodName)
 %DRAWCOUNTOVERLAY Visualize labeled components and a count label.
 
 rgb = im2uint8(rgb);
+labels = ensureImageMaskSize(labels, rgb, "count labels");
 
 if isempty(labels) || ~any(labels(:))
     overlay = rgb;
