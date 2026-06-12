@@ -35,10 +35,6 @@ wbcAlgorithm = segmentWBC(rgb, channelInfo.wbc, config);
 rbcAlgorithm = segmentRBC(rgb, channelInfo.rbc, wbcAlgorithm.maskForExclusion, config);
 rbcKMeans = segmentRBCKMeans(rgb, config);
 
-rbcAlgorithm.maskFinal = logical(ensureImageMaskSize(rbcAlgorithm.maskFinal, rgb, "algorithm RBC mask"));
-rbcKMeans.maskFinal = logical(ensureImageMaskSize(rbcKMeans.maskFinal, rgb, "K-means RBC mask"));
-rbcKMeans.maskWBC = logical(ensureImageMaskSize(rbcKMeans.maskWBC, rgb, "K-means WBC mask"));
-
 algorithmCounts = countRBCMask(rbcAlgorithm.maskFinal, rgb, config);
 kmeansCounts = countRBCMask(rbcKMeans.maskFinal, rgb, config);
 
