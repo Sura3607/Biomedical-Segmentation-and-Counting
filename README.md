@@ -1,82 +1,82 @@
-# Biomedical Segmentation and Counting - MATLAB RBC Pipeline
+# Phân đoạn và Đếm Hồng Cầu (RBC) - Pipeline MATLAB
 
-Do an xu ly anh y sinh: phan doan va dem hong cau (RBC) tren anh kinh hien vi mau ngoai vi bang MATLAB. Du an so sanh hai nhanh phan doan chinh:
+Đồ án xử lý ảnh y sinh: phân đoạn và đếm hồng cầu (RBC) trên ảnh kính hiển vi máu ngoại vi bằng MATLAB. Dự án so sánh hai nhánh phân đoạn chính:
 
-- **Algorithm segmentation:** xu ly anh truyen thong dua tren kenh mau, nguong, morphology va loai tru WBC.
-- **K-means segmentation:** phan cum khong giam sat tung pixel bang dac trung mau-khong gian, sau do gan cum thanh RBC/WBC/background bang color-feature scores.
+- **Algorithm segmentation:** xử lý ảnh truyền thống dựa trên kênh màu, ngưỡng, morphology và loại trừ WBC.
+- **K-means segmentation:** phân cụm không giám sát từng pixel bằng đặc trưng màu-không gian, sau đó gán cụm thành RBC/WBC/background bằng color-feature scores.
 
-Ca hai nhanh phan doan deu su dung chung ba phuong phap dem:
+Cả hai nhánh phân đoạn đều sử dụng chung ba phương pháp đếm:
 
 ```text
 algorithm segmentation -> connected components / watershed / area estimate
 K-means segmentation   -> connected components / watershed / area estimate
 ```
 
-Muc tieu cua repo la xay dung pipeline MATLAB co kha nang tai lap, truc quan hoa duoc mask/overlay, va danh gia dinh luong bang count metrics lan pixel metrics tren tap validation/test.
+Mục tiêu của repo là xây dựng pipeline MATLAB có khả năng tái lập, trực quan hóa được mask/overlay, và đánh giá định lượng bằng count metrics lẫn pixel metrics trên tập validation/test.
 
-## 1. Tong quan du an
+## 1. Tổng quan dự án
 
-Pipeline hien tai gom cac buoc chinh:
+Pipeline hiện tại gồm các bước chính:
 
-1. Doc anh mau ngoai vi va metadata ground truth tu `data/metadata_coutingrbc.json`.
-2. Tien xu ly anh bang chuan hoa, CLAHE va Gaussian blur.
-3. Chon kenh mau phu hop cho RBC va WBC.
-4. Phan doan WBC de tao vung loai tru.
-5. Phan doan RBC bang hai nhanh:
-   - Nhanh algorithm: threshold + morphology.
-   - Nhanh K-means: pixel-level clustering bang vector dac trung mau-khong gian.
-6. Dem RBC bang:
+1. Đọc ảnh máu ngoại vi và metadata ground truth từ `data/metadata_coutingrbc.json`.
+2. Tiền xử lý ảnh bằng chuẩn hóa, CLAHE và Gaussian blur.
+3. Chọn kênh màu phù hợp cho RBC và WBC.
+4. Phân đoạn WBC để tạo vùng loại trừ.
+5. Phân đoạn RBC bằng hai nhánh:
+   - Nhánh algorithm: threshold + morphology.
+   - Nhánh K-means: pixel-level clustering bằng vector đặc trưng màu-không gian.
+6. Đếm RBC bằng:
    - Connected components.
    - Watershed.
    - Area estimate.
-7. Danh gia bang:
+7. Đánh giá bằng:
    - Count metrics: MAE, RMSE, MAPE, exact-match accuracy, normalized count accuracy.
    - Pixel metrics: accuracy, precision, recall, F1, IoU, AUC.
-8. Xuat bang CSV, bieu do, cluster diagnostics va report figures.
+8. Xuất bảng CSV, biểu đồ, cluster diagnostics và report figures.
 
-K-means trong workflow hien tai **khong dung persisted annotation-trained model lam nhanh chinh**. Thuat toan chay truc tiep tren tung anh, sau do gan nhan cum bang cac diem `RBCScore`, `WBCScore` va `BackgroundScore`. Cac file `.mat` trong `models/` duoc giu lai cho tinh tuong thich va cac script cu.
+K-means trong workflow hiện tại **không dùng persisted annotation-trained model làm nhánh chính**. Thuật toán chạy trực tiếp trên từng ảnh, sau đó gán nhãn cụm bằng các điểm `RBCScore`, `WBCScore` và `BackgroundScore`. Các file `.mat` trong `models/` được giữ lại cho tính tương thích và các script cũ.
 
-## 2. Thanh vien va phan cong
+## 2. Thành viên và phân công
 
-Bang phan cong duoc tong hop theo GitHub Project hien tai.
+Bảng phân công được tổng hợp theo GitHub Project hiện tại.
 
-| STT | Thanh vien/GitHub | Cong viec chinh | Trang thai |
+| STT | Thành viên/GitHub | Công việc chính | Trạng thái |
 | :--: | :-- | :-- | :--: |
-| 1 | `@Sura3607` | Khoi tao repo va cau truc thu muc; viet ham dem doi tuong bang contours/connected components; phu trach phan phuong phap hoc may. | Done |
-| 2 | `@Tommyhuy1705` | Cau hinh GitHub Project; tim kiem va chot dataset y sinh; xay dung phuong phap truyen thong; viet script inference/du doan. | Done |
-| 3 | `@DDDm3` | Tien xu ly va lam sach du lieu; xay dung app/web demo; tinh toan metrics so sanh; tham gia bao cao va slide. | Done |
-| 4 | `@ngmhuy05` | Viet ham parse metadata tu ten file; tham gia bao cao va slide. | Done |
+| 1 | `@Sura3607` | Khởi tạo repo và cấu trúc thư mục; viết hàm đếm đối tượng bằng contours/connected components; phụ trách phần phương pháp học máy. | Done |
+| 2 | `@Tommyhuy1705` | Cấu hình GitHub Project; tìm kiếm và chốt dataset y sinh; xây dựng phương pháp truyền thống; viết script inference/dự đoán. | Done |
+| 3 | `@DDDm3` | Tiền xử lý và làm sạch dữ liệu; xây dựng app/web demo; tính toán metrics so sánh; tham gia báo cáo và slide. | Done |
+| 4 | `@ngmhuy05` | Viết hàm parse metadata từ tên file; tham gia báo cáo và slide. | Done |
 
-## 3. Cau truc repo
+## 3. Cấu trúc repo
 
 ```text
 .
-|-- RBCApp.m                         # MATLAB app hien thi ket qua 2x4 report view
-|-- config_default.m                 # Cau hinh trung tam cho pipeline
-|-- setupFinalPath.m                 # Them cac thu muc can thiet vao MATLAB path
-|-- mobile_capture_demo.m            # Demo voi anh chup/mobile input
+|-- RBCApp.m                         # MATLAB app hiển thị kết quả 2x4 report view
+|-- config_default.m                 # Cấu hình trung tâm cho pipeline
+|-- setupFinalPath.m                 # Thêm các thư mục cần thiết vào MATLAB path
+|-- mobile_capture_demo.m            # Demo với ảnh chụp/mobile input
 |-- data/
 |   `-- metadata_coutingrbc.json     # Metadata: image id, split, ground truth count, annotation path
 |-- methods/
-|   |-- countRBCPipeline.m           # Pipeline tong the
-|   |-- selectBestChannels.m         # Tach va chuan bi kenh mau
-|   |-- segmentWBC.m                 # Phan doan WBC de loai tru
-|   |-- segmentRBC.m                 # Nhanh algorithm segmentation
-|   |-- segmentRBCKMeans.m           # Nhanh K-means color-feature segmentation
-|   |-- buildKMeansPixelFeatures.m   # Tao feature vector cho tung pixel
-|   |-- assignKMeansCentroids.m      # Gan pixel vao centroid gan nhat
-|   |-- countRBCMask.m               # Goi ba phuong phap dem
+|   |-- countRBCPipeline.m           # Pipeline tổng thể
+|   |-- selectBestChannels.m         # Tách và chuẩn bị kênh màu
+|   |-- segmentWBC.m                 # Phân đoạn WBC để loại trừ
+|   |-- segmentRBC.m                 # Nhánh algorithm segmentation
+|   |-- segmentRBCKMeans.m           # Nhánh K-means color-feature segmentation
+|   |-- buildKMeansPixelFeatures.m   # Tạo feature vector cho từng pixel
+|   |-- assignKMeansCentroids.m      # Gán pixel vào centroid gần nhất
+|   |-- countRBCMask.m               # Gọi ba phương pháp đếm
 |   |-- countByConnectedComponents.m
 |   |-- countByWatershed.m
 |   |-- countByAreaEstimate.m
 |   `-- countSummaryRows.m
 |-- script/
-|   |-- runRBCEvaluation.m           # Chon k tren validation va danh gia test
-|   |-- evaluateRBCDataset.m         # Danh gia tung split/dataset row
-|   |-- aggregateEvaluationMetrics.m # Tong hop metrics
+|   |-- runRBCEvaluation.m           # Chọn k trên validation và đánh giá test
+|   |-- evaluateRBCDataset.m         # Đánh giá từng split/dataset row
+|   |-- aggregateEvaluationMetrics.m # Tổng hợp metrics
 |   |-- computeBinaryMaskMetrics.m   # Pixel metrics
 |   |-- computeCountMetrics.m        # Count metrics
-|   |-- readRBCAnnotationMask.m      # Rasterize annotation RBC thanh mask
+|   |-- readRBCAnnotationMask.m      # Rasterize annotation RBC thành mask
 |   |-- loadRBCMetadata.m
 |   |-- lookupRBCGroundTruth.m
 |   |-- exportKMeansClusterPlots.m
@@ -87,22 +87,22 @@ Bang phan cong duoc tong hop theo GitHub Project hien tai.
 |   |-- ensureImageMaskSize.m
 |   `-- cleanupBinaryMask.m
 |-- notebooks/
-|   |-- run_evaluations.m            # Script chay evaluation tu MATLAB
-|   |-- evaluations.m                # Ban script cua notebook evaluation
+|   |-- run_evaluations.m            # Script chạy evaluation từ MATLAB
+|   |-- evaluations.m                # Bản script của notebook evaluation
 |   `-- evaluations.mlx              # Live script evaluation
 |-- outputs/
 |   |-- metrics/                     # CSV validation/test metrics
-|   |-- plots/                       # Bieu do danh gia
-|   `-- report_figures/              # Hinh report 2x4
-|-- models/                          # K-means model artifacts cu/legacy
+|   |-- plots/                       # Biểu đồ đánh giá
+|   `-- report_figures/              # Hình report 2x4
+|-- models/                          # K-means model artifacts cũ/legacy
 `-- README.md
 ```
 
 ## 4. Dataset
 
-Dataset anh mau ngoai vi duoc dat local trong thu muc `data/`. Repo chi track file metadata, con anh va annotation raw thuong duoc ignore de tranh day file lon len Git.
+Dataset ảnh máu ngoại vi được đặt local trong thư mục `data/`. Repo chỉ track file metadata, còn ảnh và annotation raw thường được ignore để tránh đẩy file lớn lên Git.
 
-Layout mong doi:
+Layout mong đợi:
 
 ```text
 data/
@@ -118,80 +118,80 @@ data/
     `-- ann/
 ```
 
-File `metadata_coutingrbc.json` luu:
+File `metadata_coutingrbc.json` lưu:
 
-- `id`: ten anh, vi du `BloodImage_00287.jpeg`.
-- `groundTruth`: so RBC ground truth.
-- `split`: `train`, `val` hoac `test`.
-- `annotation`: duong dan annotation tuong ung.
+- `id`: tên ảnh, ví dụ `BloodImage_00287.jpeg`.
+- `groundTruth`: số RBC ground truth.
+- `split`: `train`, `val` hoặc `test`.
+- `annotation`: đường dẫn annotation tương ứng.
 
-Ground-truth mask cho pixel metrics duoc xap xi bang cach rasterize annotation RBC. Do do, pixel metrics nen duoc hieu la chi so so sanh tuong doi giua cac phuong phap, khong phai bien te bao ground truth hoan hao.
+Ground-truth mask cho pixel metrics được xấp xỉ bằng cách rasterize annotation RBC. Do đó, pixel metrics nên được hiểu là chỉ số so sánh tương đối giữa các phương pháp, không phải biên tế bào ground truth hoàn hảo.
 
-## 5. Phuong phap
+## 5. Phương pháp
 
-### 5.1 Tien xu ly va chon kenh
+### 5.1 Tiền xử lý và chọn kênh
 
-`selectBestChannels.m` tach cac kenh RGB, HSV, Lab va mot so kenh phai sinh nhu `RminusG`, `BminusR`, `RratioG`. Cau hinh hien tai trong `config_default.m` dung:
+`selectBestChannels.m` tách các kênh RGB, HSV, Lab và một số kênh phái sinh như `RminusG`, `BminusR`, `RratioG`. Cấu hình hiện tại trong `config_default.m` dùng:
 
-- Kenh RBC: `G`
-- Kenh WBC: `S`
+- Kênh RBC: `G`
+- Kênh WBC: `S`
 - CLAHE: `NumTiles = [8 8]`, `ClipLimit = 0.01`
 - Gaussian blur: `sigma = 1.2`
 
-### 5.2 Phan doan WBC
+### 5.2 Phân đoạn WBC
 
-`segmentWBC.m` ket hop nguong mean + standard deviation voi adaptive threshold. Mask WBC sau do duoc lam sach bang morphology va dilate thanh vung loai tru, giup giam truong hop dem nham WBC thanh RBC.
+`segmentWBC.m` kết hợp ngưỡng mean + standard deviation với adaptive threshold. Mask WBC sau đó được làm sạch bằng morphology và dilate thành vùng loại trừ, giúp giảm trường hợp đếm nhầm WBC thành RBC.
 
-### 5.3 Phan doan RBC bang algorithm
+### 5.3 Phân đoạn RBC bằng algorithm
 
-`segmentRBC.m` tao mask RBC bang cac cach:
+`segmentRBC.m` tạo mask RBC bằng các cách:
 
-- Otsu threshold tren kenh RBC da loai WBC.
+- Otsu threshold trên kênh RBC đã loại WBC.
 - Adaptive threshold.
 - Watershed-seed mask.
 
-Mask cuoi cung duoc lam sach bang `cleanupBinaryMask.m`, gom open/close morphology, fill holes va loc dien tich nho.
+Mask cuối cùng được làm sạch bằng `cleanupBinaryMask.m`, gồm open/close morphology, fill holes và lọc diện tích nhỏ.
 
-### 5.4 Phan doan RBC/WBC bang K-means
+### 5.4 Phân đoạn RBC/WBC bằng K-means
 
-`segmentRBCKMeans.m` xay dung vector dac trung cho tung pixel:
+`segmentRBCKMeans.m` xây dựng vector đặc trưng cho từng pixel:
 
 ```text
 [L, A, BLab, S, V, rNorm, gNorm, bNorm, BminusR, RminusG, x, y]
 ```
 
-Sau khi chay K-means, moi cum duoc thong ke theo gia tri mau trung binh va duoc gan nhan bang:
+Sau khi chạy K-means, mỗi cụm được thống kê theo giá trị màu trung bình và được gán nhãn bằng:
 
 - `BackgroundScore`
 - `WBCScore`
 - `RBCScore`
 
-Cum co WBCScore cao nhat duoc gan la WBC. Cum RBC duoc chon trong cac cum khong phai background/WBC, dua tren RBCScore va `rbcScoreMargin`.
+Cụm có WBCScore cao nhất được gán là WBC. Cụm RBC được chọn trong các cụm không phải background/WBC, dựa trên RBCScore và `rbcScoreMargin`.
 
-### 5.5 Dem RBC
+### 5.5 Đếm RBC
 
-`countRBCMask.m` ap dung ba cach dem tren cung mot mask:
+`countRBCMask.m` áp dụng ba cách đếm trên cùng một mask:
 
-1. **Connected components:** moi thanh phan lien thong hop le duoc xem la mot RBC.
-2. **Watershed:** tach cac vung RBC dinh nhau bang distance transform va marker.
-3. **Area estimate:** uoc luong so RBC theo dien tich vung mask so voi dien tich te bao don.
+1. **Connected components:** mỗi thành phần liên thông hợp lệ được xem là một RBC.
+2. **Watershed:** tách các vùng RBC dính nhau bằng distance transform và marker.
+3. **Area estimate:** ước lượng số RBC theo diện tích vùng mask so với diện tích tế bào đơn.
 
-## 6. Chay App
+## 6. Chạy App
 
-Mo MATLAB tai thu muc goc repo va chay:
+Mở MATLAB tại thư mục gốc repo và chạy:
 
 ```matlab
 setupFinalPath(pwd)
 RBCApp
 ```
 
-App ho tro:
+App hỗ trợ:
 
-- Load anh mau ngoai vi.
-- Chon segmentation: `Algorithm`, `K-means`, hoac `Both`.
-- Chon counting method: `Connected components`, `Watershed`, `Area estimate`.
-- Chon so cum K-means: `k = 2, 3, 4, 5`.
-- Hien thi ket qua theo giao dien report 2x4:
+- Load ảnh máu ngoại vi.
+- Chọn segmentation: `Algorithm`, `K-means`, hoặc `Both`.
+- Chọn counting method: `Connected components`, `Watershed`, `Area estimate`.
+- Chọn số cụm K-means: `k = 2, 3, 4, 5`.
+- Hiển thị kết quả theo giao diện report 2x4:
   - Original.
   - Predicted RBC mask.
   - Predicted WBC mask.
@@ -201,7 +201,7 @@ App ho tro:
   - Watershed overlay.
   - Area estimate overlay.
 
-Neu MATLAB van giu class cache cu, chay:
+Nếu MATLAB vẫn giữ class cache cũ, chạy:
 
 ```matlab
 close all force
@@ -212,9 +212,9 @@ setupFinalPath(pwd)
 RBCApp
 ```
 
-## 7. Chay Evaluation
+## 7. Chạy Evaluation
 
-Mo MATLAB tai thu muc goc repo va chay:
+Mở MATLAB tại thư mục gốc repo và chạy:
 
 ```matlab
 run("notebooks/run_evaluations.m")
@@ -223,22 +223,22 @@ run("notebooks/run_evaluations.m")
 Workflow evaluation:
 
 1. Load `data/metadata_coutingrbc.json`.
-2. Kiem tra split `train`, `val`, `test`.
-3. Chay color-theory K-means voi `k = 2, 3, 4, 5` tren tap `val`.
-4. Chon `k` theo MAE cua K-means + Watershed; neu gan bang nhau thi uu tien pixel F1 cao hon.
-5. Danh gia hai nhanh Algorithm va K-means tot nhat tren tap `test`.
-6. Xuat CSV metrics, plots va report figures.
+2. Kiểm tra split `train`, `val`, `test`.
+3. Chạy color-theory K-means với `k = 2, 3, 4, 5` trên tập `val`.
+4. Chọn `k` theo MAE của K-means + Watershed; nếu gần bằng nhau thì ưu tiên pixel F1 cao hơn.
+5. Đánh giá hai nhánh Algorithm và K-means tốt nhất trên tập `test`.
+6. Xuất CSV metrics, plots và report figures.
 
-Co the tao hinh report mau bang:
+Có thể tạo hình report mẫu bằng:
 
 ```matlab
 config = config_default();
 exportReportSampleFigures(config, "BloodImage_00287.jpeg")
 ```
 
-## 8. Ket qua hien tai
+## 8. Kết quả hiện tại
 
-### 8.1 Lua chon k tren validation
+### 8.1 Lựa chọn k trên validation
 
 Source: `outputs/metrics/validation_k_selection.csv`
 
@@ -249,9 +249,9 @@ Source: `outputs/metrics/validation_k_selection.csv`
 | 3 | 0.572 | 0.587 | 5.230 | 6.770 | 0.562 | No |
 | 2 | 0.489 | 0.517 | 9.080 | 10.339 | 0.239 | No |
 
-Ket qua hien tai chon **k = 4** vi co validation count MAE thap nhat.
+Kết quả hiện tại chọn **k = 4** vì có validation count MAE thấp nhất.
 
-### 8.2 Ket qua test summary
+### 8.2 Kết quả test summary
 
 Source: `outputs/metrics/test_summary_metrics.csv`
 
@@ -264,15 +264,15 @@ Source: `outputs/metrics/test_summary_metrics.csv`
 | K-means + Watershed | 72 | 5.65 | 6.92 | 46.70 | 6.94% | 0.550 | 0.602 |
 | K-means + Area Estimate | 72 | 169.99 | 240.08 | 1542.64 | 1.39% | 0.550 | 0.602 |
 
-Nhan xet nhanh:
+Nhận xét nhanh:
 
-- Algorithm co pixel F1/AUC cao hon K-means tren trung binh test set.
-- K-means + Connected Components va K-means + Watershed co count MAE thap nhat.
-- Area Estimate khong on dinh, sai so rat lon o ca hai nhanh.
+- Algorithm có pixel F1/AUC cao hơn K-means trên trung bình test set.
+- K-means + Connected Components và K-means + Watershed có count MAE thấp nhất.
+- Area Estimate không ổn định, sai số rất lớn ở cả hai nhánh.
 
 ## 9. Outputs
 
-Ket qua evaluation duoc xuat vao:
+Kết quả evaluation được xuất vào:
 
 ```text
 outputs/
@@ -296,7 +296,7 @@ outputs/
     `-- *_comparison_report.png
 ```
 
-Mot so hinh quan trong:
+Một số hình quan trọng:
 
 - `outputs/plots/validation_k_selection.png`
 - `outputs/plots/test_pixel_f1_by_method.png`
@@ -305,17 +305,17 @@ Mot so hinh quan trong:
 - `outputs/report_figures/BloodImage_00287_kmeans_report.png`
 - `outputs/report_figures/BloodImage_00287_comparison_report.png`
 
-## 10. Toolboxes yeu cau
+## 10. Toolboxes yêu cầu
 
-- MATLAB R2023a hoac phien ban tuong thich.
+- MATLAB R2023a hoặc phiên bản tương thích.
 - Image Processing Toolbox.
 - Statistics and Machine Learning Toolbox cho `kmeans`.
-- Computer Vision Toolbox la tuy chon; neu khong co, overlay van chay nhung co the khong chen text label bang `insertText`.
+- Computer Vision Toolbox là tùy chọn; nếu không có, overlay vẫn chạy nhưng có thể không chèn text label bằng `insertText`.
 
-## 11. Ghi chu ve pham vi hien tai
+## 11. Ghi chú về phạm vi hiện tại
 
-- Du an tap trung vao xu ly anh truyen thong va hoc may khong giam sat, khong dung deep learning.
-- K-means segmentation hien tai chay truc tiep tren tung anh, khong phu thuoc vao model da train bang annotation.
-- Pixel ground truth mask la mask xap xi tu annotation, nen pixel metrics phu hop de so sanh tuong doi hon la ket luan bien te bao tuyet doi.
-- Ket qua count hien tai van con MAE khoang 5-6 RBC voi cac phuong phap tot nhat, nen pipeline phu hop cho muc dich hoc thuat/thuc nghiem hon la ung dung lam sang truc tiep.
-- `Area estimate` duoc giu lai lam baseline tham khao, nhung khong phai phuong phap dem chinh vi sai so lon.
+- Dự án tập trung vào xử lý ảnh truyền thống và học máy không giám sát, không dùng deep learning.
+- K-means segmentation hiện tại chạy trực tiếp trên từng ảnh, không phụ thuộc vào model đã train bằng annotation.
+- Pixel ground truth mask là mask xấp xỉ từ annotation, nên pixel metrics phù hợp để so sánh tương đối hơn là kết luận biên tế bào tuyệt đối.
+- Kết quả count hiện tại vẫn còn MAE khoảng 5–6 RBC với các phương pháp tốt nhất, nên pipeline phù hợp cho mục đích học thuật/thực nghiệm hơn là ứng dụng lâm sàng trực tiếp.
+- `Area estimate` được giữ lại làm baseline tham khảo, nhưng không phải phương pháp đếm chính vì sai số lớn.
